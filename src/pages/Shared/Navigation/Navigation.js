@@ -1,62 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
-import logo from '../../../images/logo.png';
-
-const buttonDesign = {
-    backgroundColor: '#8A513D',
-    padding: '0 10px',
-    borderRadius: '3px'
-}
-const buttonDesign2 = {
-    backgroundColor: '#8A513D',
-    padding: '5px 10px',
-    borderRadius: '3px'
-}
-const buttonDesign3 = {
-    border: '1px solid #8A513D',
-    padding: '5px 10px',
-    borderRadius: '3px'
-}
-const buttonDesign4 = {
-    color: '#8A513D',
-    textDecoration: 'none'
-}
+import { FiMenu } from "react-icons/fi"
 
 const Navigation = () => {
+    const [open, setOpen] = useState(false);
     const { user, logout } = useAuth();
-    console.log(user);
     return (
         <>
-            <nav className="navbar container navbar-expand-lg navbar-light bg-transperent">
-                <div className="container-fluid">
-                    <img style={{ width: '100px' }} src={logo} alt="" />
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <Link style={{ ...buttonDesign4 }} to='/home'><button color="inherit">Home</button></Link>
+            <header className='border-b border-gray-300 py-2'>
+                <div className="flex items-center justify-between container mx-auto px-4 flex-wrap w-full">
+                    <div>Craft Comfort</div>
+                    <FiMenu className='lg:hidden block h-6 w-6 cursor-pointer' onClick={() => setOpen(!open)} />
+                    <nav className={`${open ? "block" : "hidden"} w-full lg:flex lg:items-center lg:w-auto`}>
+                        <ul className='text-base text-gray-700 lg:flex lg:justify-between'>
+                            <li>
+                                <Link className='lg:px-5 py-2 font-semibold block' to='/home'><button color="inherit">Home</button></Link>
                             </li>
-                            <li className="nav-item">
-                                <Link style={{ ...buttonDesign4 }} to='/services'><button color="inherit">Services</button></Link>
+                            <li>
+                                <Link className='lg:px-5 py-2 font-semibold block' to='/home'><button color="inherit">Home</button></Link>
                             </li>
-                            {/* <li className="nav-item">
-                                <Link style={{ ...buttonDesign4 }} to='/dashboard'><button color="inherit">Dashboard</button></Link>
-                            </li> */}
-                            {
-                                user?.email ? <>
-                                    <button style={{ color: '#8A513D', marginRight: '7px', ...buttonDesign3 }}>{user?.displayName}</button>
-                                    <button style={{ ...buttonDesign2, color:'white' }} onClick={logout} color="inherit">Logout</button>
-                                </>
-                                    :
-                                    <NavLink style={{ textDecoration: "none", color: 'white', ...buttonDesign }} to='/login'><button color="inherit">Login</button></NavLink>
-                            }
+                            <li>
+                                <Link className='lg:px-5 py-2 font-semibold block' to='/home'><button color="inherit">Home</button></Link>
+                            </li>
+                            <li>
+                                <Link className='lg:px-5 py-2 font-semibold block' to='/home'><button color="inherit">Home</button></Link>
+                            </li>
+                            <li>
+                                <Link className='lg:px-5 py-2 font-semibold block' to='/services'><button color="inherit">Services</button></Link>
+                            </li>
+                            <li>
+                                {
+                                    user?.email ? <>
+                                        <div className='lg:flex justify-between items-center'>
+                                            <button className='lg:px-5 py-2 font-semibold block'>{user?.displayName}</button>
+                                            <button className='lg:px-5 py-2 font-semibold block' onClick={logout}>Logout</button>
+                                        </div>
+                                    </>
+                                        :
+                                        <NavLink className='lg:px-5 py-2 font-semibold block' to='/login'><button color="inherit">Login</button></NavLink>
+                                }
+                            </li>
                         </ul>
-                    </div>
+                    </nav>
                 </div>
-            </nav>
+            </header>
         </>
     );
 };

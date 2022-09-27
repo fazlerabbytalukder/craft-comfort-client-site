@@ -8,7 +8,7 @@ import Register from './pages/Login/Register/Register';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <AuthProvider>
         <BrowserRouter>
           <Routes>
