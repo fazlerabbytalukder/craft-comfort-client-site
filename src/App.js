@@ -8,7 +8,7 @@ import Register from './pages/Login/Register/Register';
 
 function App() {
   return (
-    <div>
+    <div className='transition duration-500 font-poppins'>
       <AuthProvider>
         <BrowserRouter>
           <Routes>
