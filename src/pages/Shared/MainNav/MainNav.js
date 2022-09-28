@@ -14,7 +14,7 @@ const MainNav = () => {
     const [colorTheme, setTheme] = useDarkMood();
     return (
         <div>
-            <div className='border-b border-gray-300 py-2 dark:bg-primary dark:text-secondary'>
+            <div className='bg-gray-100 dark:border-b dark:border-gray-800 py-2 dark:bg-navDark dark:text-secondary'>
                 <div className="flex items-center justify-between container mx-auto px-4 flex-wrap w-full">
                     <div className='flex justify-between items-center'>
                         <img className='w-9 mr-2' src={logo} alt="" />
