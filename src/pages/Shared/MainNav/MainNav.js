@@ -5,7 +5,7 @@ import { FiMenu } from "react-icons/fi"
 import { BiSun } from "react-icons/bi";
 import { MdOutlineDarkMode } from "react-icons/md";
 import useDarkMood from '../../../Hooks/useDarkMood';
-import logo from '../../../images/logo.png';
+import logo from '../../../images/furniture-logo.png';
 
 const MainNav = () => {
     const [open, setOpen] = useState(false);
