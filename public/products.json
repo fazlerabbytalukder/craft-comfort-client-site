@@ -1,0 +1,76 @@
+[
+    {
+        "id": 1,
+        "productName": "guyer chair",
+        "ProductDes":"queen headboard",
+        "category": "beadroom",
+        "price":45,
+        "img": "https://i.ibb.co/Z68n5gB/product9-1.jpg",
+        "review": 5,
+        "reviewNumber": "120",
+        "avaliability": "yes"
+    },
+    {
+        "id": 2,
+        "productName": "madeline sofa",
+        "ProductDes":"fabric sofa bed",
+        "category": "Lounges & Sofa",
+        "price":120,
+        "img": "https://i.ibb.co/wQJxK8S/product1.jpg",
+        "review": 4,
+        "reviewNumber": "150",
+        "avaliability": "yes"
+    },
+    {
+        "id": 3,
+        "productName": "bianco chair",
+        "ProductDes":"fabric annent chair",
+        "category": "office",
+        "price":35,
+        "img": "https://i.ibb.co/nDqG6Md/product8.jpg",
+        "review": 4,
+        "reviewNumber": "50",
+        "avaliability": "no"
+    },
+    {
+        "id": 4,
+        "productName": "pelagia lounge",
+        "ProductDes":"outdoor modular",
+        "category": "outdoor",
+        "price":55,
+        "img": "https://i.ibb.co/4JKZtcv/product10.jpg",
+        "review": 5,
+        "reviewNumber": "250",
+        "avaliability": "yes"
+    },
+    {
+        "id": 5,
+        "productName": "avery bed",
+        "ProductDes":"queen bed",
+        "category": "mattresses",
+        "price":549,
+        "img": "https://i.ibb.co/FKrXBrw/product3.jpg",
+        "review": 3,
+        "reviewNumber": "52",
+        "avaliability": "yes"
+    },
+    {
+        "id": 6,
+        "productName": "black archie",
+        "ProductDes":"black dining side",
+        "category": "living & dining",
+        "price":399,
+        "img": "https://i.ibb.co/9bsT6fT/product12.jpg",
+        "review": 5,
+        "reviewNumber": "57",
+        "avaliability": "yes"
+    }
+    
+]
+
+
+
+
+
+
+
