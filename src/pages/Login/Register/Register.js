@@ -4,7 +4,6 @@ import useAuth from '../../../Hooks/useAuth';
 import { FcGoogle } from "react-icons/fc";
 import { ImSpinner10 } from "react-icons/im";
 import loginImg from '../../../images/login-sign-img.png';
-import MainNav from '../../Shared/MainNav/MainNav';
 
 const Register = () => {
     const [loginData, SetLoginData] = useState({})
@@ -43,12 +42,11 @@ const Register = () => {
 
     return (
         <>
-            <MainNav/>
-            <section class="text-gray-600 body-font dark:bg-primary">
-                <div class="container px-5 mx-auto flex flex-wrap items-center">
+            <section className="text-gray-600 body-font dark:bg-primary">
+                <div className="container px-5 mx-auto flex flex-wrap items-center">
                     {/* form part */}
-                    <div class="lg:w-2/6 md:w-1/2 p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 mx-auto">
-                        <h2 class="text-gray-900 font-medium title-font mx-auto text-5xl mb-3 dark:text-ternary"><span className='text-bluShade dark:text-main'>Sign</span> Up</h2>
+                    <div className="lg:w-2/6 md:w-1/2 p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 mx-auto">
+                        <h2 className="text-gray-900 font-medium title-font mx-auto text-5xl mb-3 dark:text-ternary"><span className='text-bluShade dark:text-main'>Sign</span> Up</h2>
                         <p className='mx-auto mb-8'>Do not share your login information</p>
                         {!isLoading && <form onSubmit={handleLoginSubmit}>
                             {/* google sign up form part */}
@@ -62,23 +60,23 @@ const Register = () => {
                             </div>
 
                             {/* email pass sing up form part */}
-                            <div class="relative mb-4">
-                                <label for="full-name" class="leading-7 text-sm text-gray-600">Email</label>
-                                <input type="text" name='name' placeholder='your name' onChange={handleOnChange} class="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                            <div className="relative mb-4">
+                                <label for="full-name" className="leading-7 text-sm text-gray-600">Email</label>
+                                <input type="text" name='name' placeholder='your name' onChange={handleOnChange} className="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>
-                            <div class="relative mb-4">
-                                <label for="full-name" class="leading-7 text-sm text-gray-600">Email</label>
-                                <input type="text" name='email' placeholder='email' onChange={handleOnChange} class="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                            <div className="relative mb-4">
+                                <label for="full-name" className="leading-7 text-sm text-gray-600">Email</label>
+                                <input type="text" name='email' placeholder='email' onChange={handleOnChange} className="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>
-                            <div class="relative mb-4">
-                                <label for="email" class="leading-7 text-sm text-gray-600">Password</label>
-                                <input type="password" name='password' placeholder='password' onChange={handleOnChange} class="w-full bg-formBg dark:bg-darkFormBg  rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                            <div className="relative mb-4">
+                                <label for="email" className="leading-7 text-sm text-gray-600">Password</label>
+                                <input type="password" name='password' placeholder='password' onChange={handleOnChange} className="w-full bg-formBg dark:bg-darkFormBg  rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>
-                            <div class="relative mb-4">
-                                <label for="email" class="leading-7 text-sm text-gray-600">Password</label>
-                                <input type="password" name='password2' placeholder='re pass' onChange={handleOnChange} class="w-full bg-formBg dark:bg-darkFormBg  rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                            <div className="relative mb-4">
+                                <label for="email" className="leading-7 text-sm text-gray-600">Password</label>
+                                <input type="password" name='password2' placeholder='re pass' onChange={handleOnChange} className="w-full bg-formBg dark:bg-darkFormBg  rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>
-                            <button type="submit" class="px-4 py-2 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main w-full">Singup</button>
+                            <button type="submit" className="px-4 py-2 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main w-full">Singup</button>
 
                             {/* go to sign in page */}
                             <NavLink to='/login'><button className='mt-2'>Already have an account? <span className='text-red-600'>Login</span></button></NavLink>
@@ -89,7 +87,7 @@ const Register = () => {
                     </div>
 
                     {/* image part */}
-                    <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+                    <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
                         <img className='mx-auto w-[650px]' src={loginImg} alt="" />
                     </div>
                 </div>

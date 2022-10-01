@@ -6,12 +6,14 @@ import Services from './pages/Home/Services/Services';
 import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
 import Footer from './pages/Shared/Footer/Footer';
+import Navigation from './pages/Shared/Navigation/Navigation';
 
 function App() {
   return (
     <div className='transition duration-500 font-poppins'>
       <AuthProvider>
         <BrowserRouter>
+          <Navigation/>
           <Routes>
             <Route exact path='/' element={<Home></Home>}>
 
