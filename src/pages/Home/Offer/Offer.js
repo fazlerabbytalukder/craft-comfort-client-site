@@ -5,10 +5,10 @@ import image2 from '../../../images/sofa-2.png'
 const Offer = () => {
     return (
         <div className='dark:bg-primary pb-6'>
-            <section class="text-gray-600 body-font">
-                <div class="container px-5 py-6 mx-auto">
+            <section className="text-gray-600 body-font">
+                <div className="container px-5 py-6 mx-auto">
                     {/* item grid  */}
-                    <div class="grid grid-cols-1 gap-3 lg:grid-cols-2 md:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-3 lg:grid-cols-2 md:grid-cols-2">
                         {/* single item  */}
                         <div className='grid grid-cols-1 gap-3 lg:grid-cols-2 md:grid-cols-1 bg-[#FBE3E4] p-6'>
                             <div className='flex flex-col justify-center'>
