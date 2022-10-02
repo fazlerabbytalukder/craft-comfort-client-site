@@ -18,7 +18,6 @@ const Products = () => {
             });
     }, [])
 
-    // console.log(furnitures);
 
     return (
         <div className='bg-[#F8F9FC] dark:bg-[#0F172A] pb-8'>
