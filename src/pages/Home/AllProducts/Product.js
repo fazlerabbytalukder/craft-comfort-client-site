@@ -1,10 +1,11 @@
 import React from 'react';
 import { GiSelfLove } from "react-icons/gi";
 import { AiFillStar, AiOutlineStar, AiOutlineShoppingCart } from "react-icons/ai";
+import { BsEye } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 
 const Product = ({ furniture }) => {
-    const { _id,productName, ProductDes, price, img, review, reviewNumber } = furniture;
+    const { _id, productName, category, price, img, review, reviewNumber } = furniture;
     // console.log(review);
     const history = useNavigate();
 
@@ -15,17 +16,19 @@ const Product = ({ furniture }) => {
         <div>
             <div className="shadow dark:bg-[#0B1120] dark:shadow-lg">
                 <div className="block relative h-50 rounded overflow-hidden">
-                    <img alt="ecommerce" className="object-cover object-center w-full h-full block" src={img} />
+                    <img alt="ecommerce" className="object-cover object-center w-full h-full block hover:bg-primary/10" src={img} />
                     <div className="img-top absolute top-2 right-2">
                         <div className="love-icon">
                             <GiSelfLove className='text-3xl text-yellow-400 bg-white p-1 rounded-full dark:text-primary' />
                         </div>
                     </div>
-                    <button onClick={handleProductClick}>Details</button>
+                    <div className="button absolute bottom-0 w-full opacity-0 hover:opacity-100">
+                        <button className="px-4 py-1 font-semibold bg-secondary text-ternary text-center dark:bg-secondary w-full" onClick={handleProductClick}><span className='flex items-center justify-center cursor-pointer'><BsEye className='mr-3' /> Details View </span></button>
+                    </div>
                 </div>
                 <div className="p-4">
                     <h2 className="text-primary uppercase title-font text-lg font-semibold dark:text-white">{productName}</h2>
-                    <p className="text-gray-800 capitalize text-sm dark:text-secondary">{ProductDes}</p>
+                    <p className="text-gray-800 capitalize text-sm dark:text-secondary">{category}</p>
                     <p className="mt-1 text-xl font-semibold text-primary dark:text-white">${price}</p>
                     <div className="review flex items-center">
                         <div className="flex items-center text-yellow-400">
@@ -41,7 +44,7 @@ const Product = ({ furniture }) => {
                     </div>
                 </div>
                 <div>
-                    <button className="px-4 py-2 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main w-full"><span className='flex items-center justify-center cursor-pointer'><AiOutlineShoppingCart className='mr-3'/>ADD TO CART</span></button>
+                    <button className="px-4 py-2 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main w-full"><span className='flex items-center justify-center cursor-pointer'><AiOutlineShoppingCart className='mr-3' />ADD TO CART</span></button>
                 </div>
             </div>
         </div>
