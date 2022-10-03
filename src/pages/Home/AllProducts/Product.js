@@ -1,10 +1,16 @@
 import React from 'react';
 import { GiSelfLove } from "react-icons/gi";
 import { AiFillStar, AiOutlineStar, AiOutlineShoppingCart } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
 
 const Product = ({ furniture }) => {
-    const { productName, ProductDes, price, img, review, reviewNumber } = furniture;
+    const { _id,productName, ProductDes, price, img, review, reviewNumber } = furniture;
     // console.log(review);
+    const history = useNavigate();
+
+    const handleProductClick = () => {
+        history(`/furnitures/${_id}`);
+    }
     return (
         <div>
             <div className="shadow dark:bg-[#0B1120] dark:shadow-lg">
@@ -15,6 +21,7 @@ const Product = ({ furniture }) => {
                             <GiSelfLove className='text-3xl text-yellow-400 bg-white p-1 rounded-full dark:text-primary' />
                         </div>
                     </div>
+                    <button onClick={handleProductClick}>Details</button>
                 </div>
                 <div className="p-4">
                     <h2 className="text-primary uppercase title-font text-lg font-semibold dark:text-white">{productName}</h2>
@@ -34,7 +41,7 @@ const Product = ({ furniture }) => {
                     </div>
                 </div>
                 <div>
-                    <button className="px-4 py-2 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main w-full"><span className='flex items-center justify-center'><AiOutlineShoppingCart className='mr-3'/>ADD TO CART</span></button>
+                    <button className="px-4 py-2 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main w-full"><span className='flex items-center justify-center cursor-pointer'><AiOutlineShoppingCart className='mr-3'/>ADD TO CART</span></button>
                 </div>
             </div>
         </div>

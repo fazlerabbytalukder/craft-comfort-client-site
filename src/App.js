@@ -7,6 +7,7 @@ import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
 import Footer from './pages/Shared/Footer/Footer';
 import Navigation from './pages/Shared/Navigation/Navigation';
+import ProductDetails from './pages/Home/AllProducts/ProductDetails';
 
 function App() {
   return (
@@ -15,21 +16,12 @@ function App() {
         <BrowserRouter>
           <Navigation/>
           <Routes>
-            <Route exact path='/' element={<Home></Home>}>
-
-            </Route>
-            <Route path='/home' element={<Home></Home>}>
-
-            </Route>
-            <Route path='/services' element={<PrivateRoute><Services></Services></PrivateRoute>}>
-
-            </Route>
-            <Route path='/login' element={<Login></Login>}>
-
-            </Route>
-            <Route path='/register' element={<Register></Register>}>
-
-            </Route>
+            <Route exact path='/' element={<Home></Home>}/>
+            <Route path='/home' element={<Home></Home>}/>
+            <Route path='/furnitures/:furnitureId' element={<ProductDetails></ProductDetails>}/>
+            <Route path='/services' element={<PrivateRoute><Services></Services></PrivateRoute>}/>
+            <Route path='/login' element={<Login></Login>}/>
+            <Route path='/register' element={<Register></Register>}/>
           </Routes>
           <Footer />
         </BrowserRouter>
