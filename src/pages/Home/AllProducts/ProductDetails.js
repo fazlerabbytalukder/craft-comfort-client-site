@@ -84,9 +84,8 @@ const ProductDetails = () => {
                                 </div>
                             </div>
                             <p className="leading-relaxed mb-5">{singleProduct.ProductDes}</p>
-                            <div className="flex border-t-2">
-                                <span className="title-font font-medium text-3xl text-primary mt-4 dark:text-white">$ {singleProduct.price}</span>
-                                <button className="flex ml-auto border-0 py-2 px-6 focus:outline-none rounded font-semibold bg-primary text-ternary text-center dark:bg-main mt-4">ADD TO CART</button>
+                            <div className="border-t-2">
+                                <span className="title-font font-medium text-3xl text-primary mt-4 dark:text-white pt-3">$ {singleProduct.price}</span>
                             </div>
                         </div>
                     </div>
