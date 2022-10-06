@@ -1,6 +1,6 @@
 import React from 'react';
 import { GiSelfLove } from "react-icons/gi";
-import { AiFillStar, AiOutlineStar, AiOutlineShoppingCart } from "react-icons/ai";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 
@@ -22,9 +22,6 @@ const Product = ({ furniture }) => {
                             <GiSelfLove className='text-3xl text-yellow-400 bg-white p-1 rounded-full dark:text-primary' />
                         </div>
                     </div>
-                    <div className="button absolute bottom-0 w-full opacity-0 hover:opacity-100">
-                        <button className="px-4 py-1 font-semibold bg-secondary text-ternary text-center dark:bg-secondary w-full" onClick={handleProductClick}><span className='flex items-center justify-center cursor-pointer'><BsEye className='mr-3' /> Details View </span></button>
-                    </div>
                 </div>
                 <div className="p-4">
                     <h2 className="text-primary uppercase title-font text-lg font-semibold dark:text-white">{productName}</h2>
@@ -44,7 +41,7 @@ const Product = ({ furniture }) => {
                     </div>
                 </div>
                 <div>
-                    <button className="px-4 py-2 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main w-full"><span className='flex items-center justify-center cursor-pointer'><AiOutlineShoppingCart className='mr-3' />ADD TO CART</span></button>
+                    <button className="px-4 py-2 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main w-full"><span className='flex items-center justify-center cursor-pointer' onClick={handleProductClick}><BsEye className='mr-3' />Details</span></button>
                 </div>
             </div>
         </div>
