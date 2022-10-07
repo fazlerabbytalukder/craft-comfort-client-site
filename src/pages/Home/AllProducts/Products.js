@@ -49,12 +49,14 @@ const Products = () => {
             <Heading title="Our Products" description="This is our products and here you find your desire furniture." />
             {/* loading added if item not shown */}
             {isLoading && <div className='flex justify-center items-center'><ImSpinner10 className='animate-spin text-5xl' /></div>}
-            
 
-            {/* filter component  */}
-            <Filter filterContinent={filterContinent} />
-            {/* search component  */}
-            <Search searchName={searchName} />
+
+            <div className='container px-5 mx-auto lg:flex lg:justify-between lg:items-center mb-8'>
+                {/* search component  */}
+                <Search searchName={searchName} />
+                {/* filter component  */}
+                <Filter filterContinent={filterContinent} />
+            </div>
 
 
             {/* product container  */}
