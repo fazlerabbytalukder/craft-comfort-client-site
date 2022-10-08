@@ -33,9 +33,11 @@ const MainNav = () => {
                             <li>
                                 <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/contact'><button>Contact Us</button></Link>
                             </li>
-                            <li>
+                            {
+                                user?.email && (<li>
                                 <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/dashboard'><button>Admin Dashboard</button></Link>
-                            </li>
+                            </li>)
+                            }
                             {/* user based button show login or logout  */}
                             <li>
                                 {

@@ -9,6 +9,8 @@ import Register from './pages/Login/Register/Register';
 // import Navigation from './pages/Shared/Navigation/Navigation';
 import ProductDetails from './pages/Home/AllProducts/ProductDetails';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import DashBoardHome from './pages/Dashboard/DashboardHome/DashBoardHome';
+import MyOrder from './pages/Dashboard/MyOrder/MyOrder';
 
 function App() {
   return (
@@ -17,13 +19,16 @@ function App() {
         <BrowserRouter>
           {/* <Navigation/> */}
           <Routes>
-            <Route exact path='/' element={<Home></Home>}/>
-            <Route path='/home' element={<Home></Home>}/>
-            <Route path='/dashboard' element={<Dashboard></Dashboard>}/>
-            <Route path='/furnitures/:furnitureId' element={<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>}/>
-            <Route path='/services' element={<PrivateRoute><Services></Services></PrivateRoute>}/>
-            <Route path='/login' element={<Login></Login>}/>
-            <Route path='/register' element={<Register></Register>}/>
+            <Route exact path='/' element={<Home></Home>} />
+            <Route path='/home' element={<Home></Home>} />
+            <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}>
+              <Route index element={<DashBoardHome></DashBoardHome>}></Route>
+              <Route path='myorder' element={<MyOrder></MyOrder>}></Route>
+            </Route>
+            <Route path='/furnitures/:furnitureId' element={<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>} />
+            <Route path='/services' element={<PrivateRoute><Services></Services></PrivateRoute>} />
+            <Route path='/login' element={<Login></Login>} />
+            <Route path='/register' element={<Register></Register>} />
           </Routes>
           {/* <Footer /> */}
         </BrowserRouter>

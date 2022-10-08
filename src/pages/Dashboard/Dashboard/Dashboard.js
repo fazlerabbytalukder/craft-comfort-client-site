@@ -10,6 +10,7 @@ import { RiDashboardLine } from "react-icons/ri";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { ImExit } from "react-icons/im";
 import { FiSettings } from "react-icons/fi";
+import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     const [colorTheme, setTheme] = useDarkMood();
@@ -51,14 +52,14 @@ const Dashboard = () => {
                 {/* sidebar nav section  */}
                 <nav className='col-span-2 border-r border-gray-200 min-h-[90vh] w-[80px] xl:w-[250px] pt-8 px-1 flex flex-col items-start justify-between'>
                     <div className='space-y-8 w-full'>
-                        <div className='w-full flex items-center justify-start space-x-8 px-5 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent'>
+                        <Link to="/dashboard" className='w-full flex items-center justify-start space-x-8 px-5 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent'>
                             <RiDashboardLine />
                             <h1 className='text-gray-600 group-hover:text-black xl:flex hidden'>Dashboard</h1>
-                        </div>
-                        <div className='w-full flex items-center justify-start space-x-8 px-5 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent'>
+                        </Link>
+                        <Link to="/dashboard/myorder" className='w-full flex items-center justify-start space-x-8 px-5 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent'>
                             <AiOutlineShoppingCart />
-                            <h1 className='text-gray-600 group-hover:text-black xl:flex hidden'>Market</h1>
-                        </div>
+                            <h1 className='text-gray-600 group-hover:text-black xl:flex hidden'>My Orders</h1>
+                        </Link>
                         <div className='w-full flex items-center justify-start space-x-8 px-5 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent'>
                             <HiOutlineUser />
                             <h1 className='text-gray-600 group-hover:text-black xl:flex hidden'>Portfolio</h1>
@@ -84,6 +85,8 @@ const Dashboard = () => {
                 </nav>
                 {/* sidebar content section  */}
                 <div>
+                    
+                    <Outlet></Outlet>
 
                 </div>
             </div>
