@@ -60,10 +60,10 @@ const Dashboard = () => {
                             <AiOutlineShoppingCart />
                             <h1 className='text-gray-600 group-hover:text-black xl:flex hidden'>My Orders</h1>
                         </Link>
-                        <div className='w-full flex items-center justify-start space-x-8 px-5 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent'>
+                        <Link to='/dashboard/makeadmin' className='w-full flex items-center justify-start space-x-8 px-5 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent'>
                             <HiOutlineUser />
-                            <h1 className='text-gray-600 group-hover:text-black xl:flex hidden'>Portfolio</h1>
-                        </div>
+                            <h1 className='text-gray-600 group-hover:text-black xl:flex hidden'>Make Admin</h1>
+                        </Link>
                         <div className='w-full flex items-center justify-start space-x-8 px-5 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent'>
                             <BiMessageDetail />
                             <h1 className='text-gray-600 group-hover:text-black xl:flex hidden'>News</h1>

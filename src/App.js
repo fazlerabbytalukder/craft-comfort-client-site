@@ -11,6 +11,7 @@ import ProductDetails from './pages/Home/AllProducts/ProductDetails';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import DashBoardHome from './pages/Dashboard/DashboardHome/DashBoardHome';
 import MyOrder from './pages/Dashboard/MyOrder/MyOrder';
+import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}>
               <Route index element={<DashBoardHome></DashBoardHome>}></Route>
               <Route path='myorder' element={<MyOrder></MyOrder>}></Route>
+              <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
             </Route>
             <Route path='/furnitures/:furnitureId' element={<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>} />
             <Route path='/services' element={<PrivateRoute><Services></Services></PrivateRoute>} />
