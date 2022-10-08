@@ -61,7 +61,7 @@ const Register = () => {
 
                             {/* email pass sing up form part */}
                             <div className="relative mb-4">
-                                <label for="full-name" className="leading-7 text-sm text-gray-600">Email</label>
+                                <label for="full-name" className="leading-7 text-sm text-gray-600">Name</label>
                                 <input type="text" name='name' placeholder='your name' onChange={handleOnChange} className="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>
                             <div className="relative mb-4">
