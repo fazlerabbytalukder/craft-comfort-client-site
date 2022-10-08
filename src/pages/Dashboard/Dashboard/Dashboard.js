@@ -11,9 +11,11 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { ImExit } from "react-icons/im";
 import { FiSettings } from "react-icons/fi";
 import { Link, Outlet } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 
 const Dashboard = () => {
     const [colorTheme, setTheme] = useDarkMood();
+    const { admin } = useAuth();
     return (
         <div>
             {/* header section start */}
@@ -21,16 +23,16 @@ const Dashboard = () => {
                 {/* logo */}
                 <div className='flex justify-between items-center'>
                     <img className='w-9 mr-2' src={logo} alt="" />
-                    <p className='text-sm font-semibold dark:text-ternary'>Craft <br /> Admin Pannel</p>
+                    <p className='text-sm font-semibold dark:text-ternary'>Craft <br /> Dashboard Pannel</p>
                 </div>
                 {/* icons */}
                 <div className='flex justify-between items-center'>
                     <div className='flex justify-between items-center'>
                         <IoMdNotificationsOutline className='text-2xl mr-3 cursor-pointer' />
                         <HiOutlineMailOpen className='text-2xl mr-3 cursor-pointer' />
-                        <BiUserCircle className='text-2xl mr-3 cursor-pointer'/>
+                        <BiUserCircle className='text-2xl mr-3 cursor-pointer' />
                     </div>
-                    
+
                     {/* dark and light mood  */}
                     <div className='flex justify-center items-center cursor-pointer'>
                         <span onClick={() => setTheme(colorTheme)}>
@@ -60,10 +62,14 @@ const Dashboard = () => {
                             <AiOutlineShoppingCart />
                             <h1 className='text-gray-600 group-hover:text-black xl:flex hidden'>My Orders</h1>
                         </Link>
-                        <Link to='/dashboard/makeadmin' className='w-full flex items-center justify-start space-x-8 px-5 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent'>
-                            <HiOutlineUser />
-                            <h1 className='text-gray-600 group-hover:text-black xl:flex hidden'>Make Admin</h1>
-                        </Link>
+                        {
+                            admin && <div>
+                                <Link to='/dashboard/makeadmin' className='w-full flex items-center justify-start space-x-8 px-5 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent'>
+                                    <HiOutlineUser />
+                                    <h1 className='text-gray-600 group-hover:text-black xl:flex hidden'>Make Admin</h1>
+                                </Link>
+                            </div>
+                        }
                         <div className='w-full flex items-center justify-start space-x-8 px-5 cursor-pointer group hover:border-gray-900 border-l-4 border-transparent'>
                             <BiMessageDetail />
                             <h1 className='text-gray-600 group-hover:text-black xl:flex hidden'>News</h1>
@@ -85,7 +91,7 @@ const Dashboard = () => {
                 </nav>
                 {/* sidebar content section  */}
                 <div>
-                    
+
                     <Outlet></Outlet>
 
                 </div>
