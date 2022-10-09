@@ -36,7 +36,7 @@ const ProductDetails = () => {
     const handleOrderSubmit = (e) => {
         const productOrder = {
             ...orderInfo,
-            furnitureName: singleProduct.foodName,
+            furnitureName: singleProduct.productName,
             price: singleProduct.price,
             img: singleProduct.img,
             category: singleProduct.category,
