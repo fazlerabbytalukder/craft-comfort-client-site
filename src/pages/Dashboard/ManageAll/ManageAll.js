@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { ImSpinner10 } from "react-icons/im";
+import { BsTrash } from "react-icons/bs";
 
 const ManageAll = () => {
     const [orderData, setOrderData] = useState([])
     const [isLoading, setIsLoading] = useState(false);
     const [approveId, setApproveId] = useState('');
 
+    // fetch all order 
     useEffect(() => {
         setIsLoading(true);
         fetch('http://localhost:5000/allOrders')
@@ -71,8 +73,10 @@ const ManageAll = () => {
                     <th className='py-3'>Action</th>
                 </thead>
 
+                {/* loading section  */}
                 {isLoading && <div className='flex justify-center items-center'><ImSpinner10 className='animate-spin text-5xl text-center' /></div>}
 
+                {/* table body  */}
                 <tbody className='divide-y divide-primary dark:divide-main'>
                     {orderData.map((row) => (
                         <tr key={row._id} className='text-center cursor-pointer'>
@@ -81,7 +85,7 @@ const ManageAll = () => {
                             <td className='py-3 px-6 whitespace-nowrap'>{row.furnitureName}</td>
                             <td className='py-3 px-6 whitespace-nowrap'>{row.status === "pending" ? <span className='bg-red-100 px-3 py-1 rounded-full dark:text-primary'>{row.status}</span> : <span className='bg-lime-100 px-3 py-1 rounded-full dark:text-primary'>{row.status}</span>}</td>
                             <td className="py-3 px-6 whitespace-nowrap"><button className={`bg-primary dark:bg-main text-white px-3 py-1 rounded ${row.status === "Shipped" && "opacity-50 cursor-not-allowed"}`} onClick={() => handleUpdate(row._id)}>{row.status === "pending" ? <span>Approve</span> : <span>Shipped</span>}</button></td>
-                            <td className='py-3 px-6 whitespace-nowrap'><button className='bg-primary dark:bg-main text-white px-3 py-1 rounded' onClick={() => handleDelete(row._id)}>Delete</button></td>
+                            <td className='py-3 px-6 whitespace-nowrap'><button onClick={() => handleDelete(row._id)}><BsTrash className='text-red-600'/></button></td>
                         </tr>
                     ))}
                 </tbody>
