@@ -41,69 +41,113 @@ const AddProducts = () => {
 
 
     return (
-        <form className='flex flex-col space-y-3' onSubmit={handleSubmit}>
-            <input
-                placeholder="Food Name"
-                required
-                value={productData.productName}
-                onChange={e => setProductData({ ...productData, productName: e.target.value })}
-                name="productName"
-                type="text" />
-            <input
-                placeholder="Description"
-                required
-                value={productData.ProductDes}
-                onChange={e => setProductData({ ...productData, ProductDes: e.target.value })}
-                name="ProductDes"
-                type="text" />
-            <select value={productData.category} onChange={(e) => setProductData({ ...productData, category: (e.target.value) })}>
-                <option></option>
-                <option>Lounges & Sofa</option>
-                <option>outdoor</option>
-                <option>office</option>
-                <option>mattresses</option>
-                <option>beadroom</option>
-                <option>living & dining</option>
-            </select>
-            <input
-                placeholder="Price"
-                required
-                value={productData.price}
-                onChange={e => setProductData({ ...productData, price: parseFloat(e.target.value)})}
-                name="price"
-                type="number" />
-            <input
-                placeholder="Review"
-                required
-                value={productData.review}
-                onChange={e => setProductData({ ...productData, review: parseFloat(e.target.value)})}
-                name="review"
-                type="number" />
-            <input
-                placeholder="Review Number"
-                required
-                value={productData.reviewNumber}
-                onChange={e => setProductData({ ...productData, reviewNumber: parseFloat(e.target.value)})}
-                name="reviewNumber"
-                type="number" />
-            <input
-                placeholder="Give Image Link"
-                required
-                value={productData.img}
-                onChange={e => setProductData({ ...productData, img: e.target.value })}
-                name="img"
-                type="text" />
-            
+        <div className=''>
+            <h1 className='text-center text-2xl uppercase font-semibold py-3 text-primary dark:text-main'>Add New Product</h1>
+            <form className='space-y-3' onSubmit={handleSubmit}>
+                <div className='lg:flex lg:justify-between lg:space-x-3'>
+                    <div className='w-full'>
+                        <div className="relative flex flex-col">
+                            <label for="productName" className="leading-7 text-sm text-gray-600">Food Name:</label>
+                            <input
+                                placeholder="Food Name"
+                                required
+                                value={productData.productName}
+                                onChange={e => setProductData({ ...productData, productName: e.target.value })}
+                                name="productName"
+                                type="text"
+                                className="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                            />
+                        </div>
+                        <div className="relative flex flex-col">
+                            <label for="ProductDes" className="leading-7 text-sm text-gray-600">Description</label>
+                            <textarea
+                                rows="3"
+                                cols="50"
+                                placeholder="Description"
+                                required
+                                value={productData.ProductDes}
+                                onChange={e => setProductData({ ...productData, ProductDes: e.target.value })}
+                                name="ProductDes"
+                                type="text"
+                                className="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                            />
+                        </div>
+                        <div className="relative flex flex-col">
+                            <label for="category" className="leading-7 text-sm text-gray-600">Select Category</label>
+                            <select value={productData.category} onChange={(e) => setProductData({ ...productData, category: (e.target.value) })} className="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-2 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                <option></option>
+                                <option>Lounges & Sofa</option>
+                                <option>outdoor</option>
+                                <option>office</option>
+                                <option>mattresses</option>
+                                <option>beadroom</option>
+                                <option>living & dining</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className='w-full'>
+                        <div className="relative flex flex-col">
+                            <label for="price" className="leading-7 text-sm text-gray-600">Price</label>
+                            <input
+                                placeholder="Price"
+                                required
+                                value={productData.price}
+                                onChange={e => setProductData({ ...productData, price: parseFloat(e.target.value) })}
+                                name="price"
+                                type="number"
+                                className="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                            />
+                        </div>
+                        <div className="relative flex flex-col">
+                            <label for="review" className="leading-7 text-sm text-gray-600">Review(1-5)</label>
+                            <input
+                                placeholder="Review"
+                                required
+                                value={productData.review}
+                                onChange={e => setProductData({ ...productData, review: parseFloat(e.target.value) })}
+                                name="review"
+                                type="number"
+                                className="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                            />
+                        </div>
+                        <div className="relative flex flex-col">
+                            <label for="reviewNumber" className="leading-7 text-sm text-gray-600">Review Number</label>
+                            <input
+                                placeholder="Review Number"
+                                required
+                                value={productData.reviewNumber}
+                                onChange={e => setProductData({ ...productData, reviewNumber: parseFloat(e.target.value) })}
+                                name="reviewNumber"
+                                type="number"
+                                className="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                            />
+                        </div>
+                        <div className="relative flex flex-col">
+                            <label for="imageLink" className="leading-7 text-sm text-gray-600">Image Link</label>
+                            <input
+                                placeholder="Give Image Link"
+                                required
+                                value={productData.img}
+                                onChange={e => setProductData({ ...productData, img: e.target.value })}
+                                name="img"
+                                type="text"
+                                className="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                            />
+                        </div>
+                    </div>
+                </div>
 
 
-            {/* success section  */}
-            {addProductSuccess && (<div className='bg-green-700/60 py-3 rounded text-white flex items-center px-4 mb-4'>
-                <p className='mr-3'><BsFillCheckCircleFill /></p>
-                <p>Successfully product added</p>
-            </div>)}
 
-            <button type='submit' className='px-4 py-2 font-semibold block bg-primary text-ternary text-center dark:bg-main'>Submit</button>
-        </form>
+                {/* success section  */}
+                {addProductSuccess && (<div className='bg-green-700/60 py-3 rounded text-white flex items-center px-4 mb-4'>
+                    <p className='mr-3'><BsFillCheckCircleFill /></p>
+                    <p>Successfully product added</p>
+                </div>)}
+
+                <button type='submit' className='w-full px-4 py-2 font-semibold block bg-primary text-ternary text-center dark:bg-main'>Submit</button>
+            </form>
+        </div>
     );
 };
 
