@@ -15,6 +15,7 @@ import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
 import AminRoute from './pages/Login/Login/AdminRoute/AminRoute';
 import ManageAll from './pages/Dashboard/ManageAll/ManageAll';
 import ManageAllProduct from './pages/Dashboard/ManageAllProduct/ManageAllProduct';
+import AddProducts from './pages/Dashboard/AddProducts/AddProducts';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               <Route path='manageall' element={<AminRoute><ManageAll></ManageAll></AminRoute>}></Route>
               <Route path='makeadmin' element={<AminRoute><MakeAdmin></MakeAdmin></AminRoute>}></Route>
               <Route path='manageallproduct' element={<AminRoute><ManageAllProduct></ManageAllProduct></AminRoute>}></Route>
+              <Route path='addproducts' element={<AminRoute><AddProducts></AddProducts></AminRoute>}></Route>
             </Route>
             <Route path='/furnitures/:furnitureId' element={<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>} />
             <Route path='/services' element={<PrivateRoute><Services></Services></PrivateRoute>} />

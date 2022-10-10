@@ -4,9 +4,9 @@ import { Link, Outlet } from 'react-router-dom';
 import { BsArrowLeftShort } from "react-icons/bs";
 import { BiHome } from "react-icons/bi";
 import { RiAdminLine } from "react-icons/ri";
-import { MdOutlineManageAccounts } from "react-icons/md";
+import { MdOutlineManageAccounts, MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { MdOutlineProductionQuantityLimits } from "react-icons/md";
+import { AiFillFolderAdd } from "react-icons/ai";
 import DashboardNav from '../../Shared/DashboardNav/DashboardNav';
 import useAuth from '../../../Hooks/useAuth';
 
@@ -58,6 +58,12 @@ const Dashboard = () => {
                                 <Link to='/dashboard/manageall' className='text-white text-sm- flex items-center gap-x-4 cursor-pointer p-2 hover:text-main dark:hover:text-primary rounded-md mt-2'>
                                     <span><MdOutlineManageAccounts /></span>
                                     <span className={`text-base font-medium flex-1 duration-300 ${!open && "hidden"}`}>Manage All</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/dashboard/addproducts' className='text-white text-sm- flex items-center gap-x-4 cursor-pointer p-2 hover:text-main dark:hover:text-primary rounded-md mt-2'>
+                                    <span><AiFillFolderAdd /></span>
+                                    <span className={`text-base font-medium flex-1 duration-300 ${!open && "hidden"}`}>Add Products</span>
                                 </Link>
                             </li>
                             </div>
