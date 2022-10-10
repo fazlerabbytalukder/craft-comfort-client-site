@@ -103,7 +103,7 @@ const MakeAdmin = () => {
                             <tr key={row._id} className='text-center cursor-pointer'>
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.displayName}</td>
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.email}</td>
-                                <td className='py-3 px-6 whitespace-nowrap'>{row.role === 'admin' ? "Admin" : "User"}</td>
+                                <td className='py-3 px-6 whitespace-nowrap'>{row.role === 'admin' ? <span className='bg-lime-100 px-3 py-1 rounded-full dark:text-primary'>Admin</span> : <span className='bg-red-100 px-3 py-1 rounded-full dark:text-primary'>User</span>}</td>
                                 <td><button onClick={() => handleDelete(row._id)}><BsTrash className='text-red-600' /></button></td>
                             </tr>
                         ))}
