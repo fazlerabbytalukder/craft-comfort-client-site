@@ -6,6 +6,7 @@ import { BiHome } from "react-icons/bi";
 import { RiAdminLine } from "react-icons/ri";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import DashboardNav from '../../Shared/DashboardNav/DashboardNav';
 import useAuth from '../../../Hooks/useAuth';
 
@@ -45,6 +46,12 @@ const Dashboard = () => {
                                 <Link to='/dashboard/makeadmin' className='text-white text-sm- flex items-center gap-x-4 cursor-pointer p-2 hover:text-main dark:hover:text-primary rounded-md mt-2'>
                                     <span><RiAdminLine /></span>
                                     <span className={`text-base font-medium flex-1 duration-300 ${!open && "hidden"}`}>Make Admin</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/dashboard/manageallproduct' className='text-white text-sm- flex items-center gap-x-4 cursor-pointer p-2 hover:text-main dark:hover:text-primary rounded-md mt-2'>
+                                    <span><MdOutlineProductionQuantityLimits /></span>
+                                    <span className={`text-base font-medium flex-1 duration-300 ${!open && "hidden"}`}>Manage All Product</span>
                                 </Link>
                             </li>
                             <li>
