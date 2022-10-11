@@ -64,7 +64,7 @@ const Products = () => {
                 <div className="container px-5 mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4">
                         {
-                            displayFurniture.map(furniture => <Product key={furniture._id} furniture={furniture} />)
+                            displayFurniture.slice(0, 8).map(furniture => <Product key={furniture._id} furniture={furniture} />)
                         }
                     </div>
                 </div>
