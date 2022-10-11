@@ -6,6 +6,7 @@ import Offer from '../Offer/Offer';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
 import NawArrivals from '../NewArrivals/NawArrivals';
+import OfferBanner from '../OfferBanner/OfferBanner';
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
             <ExclusiveOffer></ExclusiveOffer>
             <Offer></Offer>
             <Products></Products>
+            <OfferBanner></OfferBanner>
             <NawArrivals></NawArrivals>
             <Footer></Footer>
         </div>
