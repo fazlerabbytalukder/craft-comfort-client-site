@@ -52,6 +52,7 @@ const MyOrder = () => {
                         <th className='py-3'>Product Name</th>
                         <th className='py-3'>Price</th>
                         <th className='py-3'>Category</th>
+                        <th className='py-3'>Status</th>
                         <th className='py-3'>Action</th>
                     </thead>
 
@@ -63,7 +64,8 @@ const MyOrder = () => {
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.furnitureName}</td>
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.price}</td>
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.category}</td>
-                                <td><button onClick={() => handleDelete(row._id)}><BsTrash className='text-red-600' /></button></td>
+                                <td className='py-3 px-6 whitespace-nowrap'>{row.status ==="pending" ? <span className='bg-red-100 px-3 py-1 rounded-full dark:text-primary'>Pending</span>:<span className='bg-lime-100 px-3 py-1 rounded-full dark:text-primary'>Shifted</span>}</td>
+                                <td><button onClick={() => handleDelete(row._id)} className={`${row.status === "Shipped" && "opacity-50 cursor-not-allowed"}`}><BsTrash className='text-red-600' /></button></td>
                             </tr>
                         ))}
                     </tbody>

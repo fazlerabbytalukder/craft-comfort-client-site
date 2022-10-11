@@ -3,7 +3,7 @@ import { ImSpinner10 } from "react-icons/im";
 import { BsTrash } from "react-icons/bs";
 
 const ManageAllProduct = () => {
-    const [foods, setFoods] = useState([]);
+    const [furniture, setFurniture] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ const ManageAllProduct = () => {
         fetch('http://localhost:5000/furnitures')
             .then(res => res.json())
             .then(data => {
-                setFoods(data)
+                setFurniture(data)
                 setIsLoading(false);
             });
     }, [])
@@ -28,8 +28,8 @@ const ManageAllProduct = () => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         alert('deleted successfully');
-                        const remainingFoods = foods.filter(user => user._id !== id);
-                        setFoods(remainingFoods);
+                        const remainingFurniture = furniture.filter(user => user._id !== id);
+                        setFurniture(remainingFurniture);
                         // window.reload();
                     }
                 });
@@ -52,7 +52,7 @@ const ManageAllProduct = () => {
                     {isLoading && <div className='flex justify-center items-center'><ImSpinner10 className='animate-spin text-5xl text-center' /></div>}
 
                     <tbody className='divide-y divide-primary dark:divide-main'>
-                        {foods.map((row) => (
+                        {furniture.map((row) => (
                             <tr key={row._id} className='text-center cursor-pointer'>
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.productName}</td>
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.price}</td>
