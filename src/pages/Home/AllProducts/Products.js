@@ -12,16 +12,33 @@ const Products = () => {
     const [categoryName, setCategoryName] = useState('all');
     const [isLoading, setIsLoading] = useState(false);
 
+    const [pageCount, setPageCount] = useState(0);
+    const [page, setPage] = useState(0);
+    const [size, setSize] = useState(8);
+
+
+    // page count part 
+    useEffect(() => {
+        fetch('http://localhost:5000/furnituresCount')
+            .then(res => res.json())
+            .then(data => {
+                const count = data.count;
+                const pages = Math.ceil(count / 8);
+                setPageCount(pages)
+            });
+    }, [])
+
+    // data fetch 
     useEffect(() => {
         setIsLoading(true);
-        fetch('http://localhost:5000/furnitures')
+        fetch(`http://localhost:5000/furnitures?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setFurnitures(data);
                 setDisplayFurniture(data);
                 setIsLoading(false);
             });
-    }, [])
+    }, [page, size])
 
     // filter section 
     const filterContinent = (e) => {
@@ -67,6 +84,24 @@ const Products = () => {
                             displayFurniture.map(furniture => <Product key={furniture._id} furniture={furniture} />)
                         }
                     </div>
+                    {/* pagination part  */}
+                    <div className='flex items-center justify-end'>
+                        <div className='space-x-2 mt-6'>
+                            {
+                                [...Array(pageCount).keys()].map(number => <button
+                                    onClick={() => setPage(number)}
+                                    className={`border border-[#FD3D57] px-4 py-1 font-bold dark:text-white ${page === number ? "bg-[#FD3D57]" : ""}`}
+                                >{number}</button>)
+                            }
+                            <select className='border border-[#FD3D57] px-4 py-1 font-bold dark:text-white' onChange={e => setSize(e.target.value)}>
+                                <option value="8" selected>8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                            </select>
+                        </div>
+                    </div>
+                    {/* pagination end  */}
                 </div>
             </section>
             {/* product container end  */}
