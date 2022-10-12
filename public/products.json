@@ -64,17 +64,86 @@
         "review": 5,
         "reviewNumber": "57",
         "avaliability": "yes"
+    },
+    {
+        "id": 7,
+        "productName": "black archie",
+        "ProductDes":"black dining side",
+        "category": "living & dining",
+        "price":399,
+        "img": "https://i.ibb.co/FYzv49r/category-5.jpg",
+        "review": 5,
+        "reviewNumber": "57",
+        "avaliability": "yes"
+    },
+    {
+        "id": 8,
+        "productName": "black archie",
+        "ProductDes":"black dining side",
+        "category": "living & dining",
+        "price":399,
+        "img": "https://i.ibb.co/z51RcYh/category-4.jpg",
+        "review": 5,
+        "reviewNumber": "57",
+        "avaliability": "yes"
+    },
+    {
+        "id": 9,
+        "productName": "black archie",
+        "ProductDes":"black dining side",
+        "category": "living & dining",
+        "price":399,
+        "img": "https://i.ibb.co/yhcZ1yc/category-3.jpg",
+        "review": 5,
+        "reviewNumber": "57",
+        "avaliability": "yes"
+    },
+    {
+        "id": 10,
+        "productName": "black archie",
+        "ProductDes":"black dining side",
+        "category": "living & dining",
+        "price":399,
+        "img": "https://i.ibb.co/sJ86Hjz/category-1.jpg",
+        "review": 5,
+        "reviewNumber": "57",
+        "avaliability": "yes"
+    },
+    {
+        "id": 11,
+        "productName": "black archie",
+        "ProductDes":"black dining side",
+        "category": "living & dining",
+        "price":399,
+        "img": "https://i.ibb.co/7Wxs69q/product6.jpg",
+        "review": 5,
+        "reviewNumber": "57",
+        "avaliability": "yes"
+    },
+    {
+        "id": 12,
+        "productName": "black archie",
+        "ProductDes":"black dining side",
+        "category": "living & dining",
+        "price":399,
+        "img": "https://i.ibb.co/VCcCPDP/product4.jpg",
+        "review": 5,
+        "reviewNumber": "57",
+        "avaliability": "yes"
+    },
+    {
+        "id": 13,
+        "productName": "black archie",
+        "ProductDes":"black dining side",
+        "category": "living & dining",
+        "price":399,
+        "img": "https://i.ibb.co/gwVLZ2D/product2.jpg",
+        "review": 5,
+        "reviewNumber": "57",
+        "avaliability": "yes"
     }
     
 ]
-
-// https://i.ibb.co/sJ86Hjz/category-1.jpg
-// https://i.ibb.co/yhcZ1yc/category-3.jpg
-// https://i.ibb.co/z51RcYh/category-4.jpg
-// https://i.ibb.co/FYzv49r/category-5.jpg
-// https://i.ibb.co/gwVLZ2D/product2.jpg
-// https://i.ibb.co/VCcCPDP/product4.jpg
-// https://i.ibb.co/7Wxs69q/product6.jpg
 
 
 
