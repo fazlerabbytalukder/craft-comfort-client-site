@@ -25,7 +25,7 @@ const MainNav = () => {
                         <ul className='text-base text-gray-700 dark:text-secondary lg:flex lg:justify-between'>
                             {/* all links here  */}
                             <li>
-                                <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/home'><button>Home</button></Link>
+                                <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/'><button>Home</button></Link>
                             </li>
                             <li>
                                 <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/services'><button>Services</button></Link>
