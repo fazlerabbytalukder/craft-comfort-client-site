@@ -30,7 +30,7 @@ const NawArrivals = () => {
                 <div className="container px-5 mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4">
                         {
-                            furniture.slice(furniture.length - 4, 8).map(furniture => <NawArrival key={furniture._id} furniture={furniture} />)
+                            furniture.slice(furniture.length - 4, furniture.length).map(furniture => <NawArrival key={furniture._id} furniture={furniture} />)
                         }
                     </div>
                 </div>
