@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import useCart from '../../../Hooks/useCart';
 import { addToDb } from '../../../utilities/fakedb';
-import Cart from './Cart';
-// import Heading from '../AllComponents/Heading';
+import Heading from '../AllComponents/Heading';
 import Product from './Product';
-// import { ImSpinner10 } from "react-icons/im";
-// import Search from '../AllComponents/Search';
-// import Filter from '../AllComponents/Filter';
 
 
 const Products = () => {
@@ -41,24 +36,6 @@ const Products = () => {
     }, [page, size])
 
 
-    // const filterContinent = (e) => {
-    //     setCategoryName(e.target.value);
-    // }
-    // useEffect(() => {
-    //     if (categoryName === 'all') {
-    //         setDisplayFurniture(furnitures);
-    //         return;
-    //     }
-    //     setDisplayFurniture(furnitures.filter(furniture => furniture.category === categoryName))
-    // }, [categoryName])
-
-
-    // const searchName = (e) => {
-    //     const name = e.target.value;
-    //     const matchedNames = furnitures.filter(furniture => furniture.productName.toLowerCase().includes(name.toLowerCase()));
-    //     setDisplayFurniture(matchedNames);
-    // }
-
     const handleAddToCart = (selectedFurnitures) => {
         let newCart = [];
         const exist = cart.find(furniture => furniture._id === selectedFurnitures.id);
@@ -76,10 +53,9 @@ const Products = () => {
 
 
     return (
-        <>
-            <div>
-                <h1 className="text-center font-bold text-2xl py-5"> for cart practric</h1>
-            </div>
+        <div className="dark:bg-[#0F172A] pb-6">
+            {/* heading components  */}
+            <Heading title="Our Products" description="This is Our products and here you find all Products" />
             <section className="text-gray-600 body-font">
                 <div className="container px-5 mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4">
@@ -95,7 +71,7 @@ const Products = () => {
                                         className={`border border-[#FD3D57] px-4 py-1 font-bold dark:text-white ${page === number ? "bg-[#FD3D57]" : ""}`}
                                     >{number + 1}</button>)
                                 }
-                                <select className='border border-[#FD3D57] px-4 py-1 font-bold dark:text-white' onChange={e => setSize(e.target.value)}>
+                                <select className='border border-[#FD3D57] px-4 py-1 font-bold dark:text-white dark:bg-primary dark:border-[#FD3D57]' onChange={e => setSize(e.target.value)}>
                                     <option value="8" selected>8</option>
                                     <option value="10">10</option>
                                     <option value="12">12</option>
@@ -105,21 +81,6 @@ const Products = () => {
                         </div>
                 </div>
             </section>
-            {/* <Cart cart={cart}>
-                <Link className='bg-primary text-white px-3 py-1' to='/cartReview'>
-                    Cart Review
-                </Link>
-            </Cart> */}
-
-
-
-
-
-
-
-
-
-
 
             {/* 
             <div className='bg-[#F8F9FC] dark:bg-[#0F172A] pb-8'>
@@ -163,7 +124,7 @@ const Products = () => {
                 </section>
 
             </div> */}
-        </>
+        </div>
     );
 };
 

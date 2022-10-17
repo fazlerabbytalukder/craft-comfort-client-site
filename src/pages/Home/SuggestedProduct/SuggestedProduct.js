@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { AiOutlineStar, AiFillStar, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 
 const SuggestedProduct = ({furniture, handleAddToCart}) => {
@@ -35,7 +35,7 @@ const SuggestedProduct = ({furniture, handleAddToCart}) => {
                     </div>
                 </div>
                 <div>
-                    <button className='bg-primary text-white w-full' onClick={()=>handleAddToCart(furniture)}>Cart</button>
+                    <button className='bg-primary text-white w-full py-2 rounded-b dark:bg-main' onClick={()=>handleAddToCart(furniture)}><span className='flex justify-center items-center'><AiOutlineShoppingCart className='mr-2'/>Add To Cart</span></button>
                 </div>
             </div>
         </div>
