@@ -16,6 +16,8 @@ import AminRoute from './pages/Login/Login/AdminRoute/AminRoute';
 import ManageAll from './pages/Dashboard/ManageAll/ManageAll';
 import ManageAllProduct from './pages/Dashboard/ManageAllProduct/ManageAllProduct';
 import AddProducts from './pages/Dashboard/AddProducts/AddProducts';
+import CartReviews from './pages/Cart/CartReview/CartReviews';
+import Checkout from './pages/Cart/Checkout/Checkout';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Home></Home>} />
             <Route path='/home' element={<Home></Home>} />
+            <Route path='/cartReview' element={<CartReviews></CartReviews>} />
+            <Route path='/checkout' element={<PrivateRoute><Checkout></Checkout></PrivateRoute>} />
             <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}>
               <Route index element={<DashBoardHome></DashBoardHome>}></Route>
               <Route path='myorder' element={<MyOrder></MyOrder>}></Route>

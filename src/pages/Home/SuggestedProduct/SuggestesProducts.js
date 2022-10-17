@@ -2,21 +2,28 @@ import React, { useEffect, useState } from 'react';
 import Heading from '../AllComponents/Heading';
 import { ImSpinner10 } from "react-icons/im";
 import SuggestedProduct from './SuggestedProduct';
+import useProducts from '../../../Hooks/useProducts';
+import useCart from '../../../Hooks/useCart';
+import { addToDb } from '../../../utilities/fakedb';
 
 const SuggestesProducts = () => {
-    const [furniture, setFurniture] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [furniture, setFurniture, isLoading] = useProducts();
+    const [cart, setCart] = useCart();
 
-    useEffect(() => {
-        setIsLoading(true);
-        fetch('http://localhost:5000/furnitures')
-            .then(res => res.json())
-            .then(data => {
-                setFurniture(data);
-                setIsLoading(false);
-            });
-    }, [])
-
+    const handleAddToCart = (selectedFurnitures) => {
+        let newCart = [];
+        const exist = cart.find(furniture => furniture._id === selectedFurnitures.id);
+        if (!exist) {
+            selectedFurnitures.quantity = 1;
+            newCart = [...cart, selectedFurnitures];
+        } else {
+            const rest = cart.filter(furniture => furniture._id !== selectedFurnitures.id);
+            exist.quantity = exist.quantity + 1;
+            newCart = [...rest, exist];
+        }
+        setCart(newCart);
+        addToDb(selectedFurnitures._id);
+    }
 
     return (
         <div className='bg-[#F8F9FC] dark:bg-[#0F172A] pb-8'>
@@ -31,7 +38,7 @@ const SuggestesProducts = () => {
                 <div className="container px-5 mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4">
                         {
-                            furniture.slice(furniture.sort(() => Math.random() - 0.5),4).map(furniture => <SuggestedProduct key={furniture._id} furniture={furniture} />)
+                            furniture.slice(furniture.sort(() => Math.random() - 0.5),4).map(furniture => <SuggestedProduct key={furniture._id} furniture={furniture} handleAddToCart={handleAddToCart} />)
                         }
                     </div>
                 </div>

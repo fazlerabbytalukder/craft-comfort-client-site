@@ -3,10 +3,9 @@ import MainNav from '../MainNav/MainNav';
 
 
 const Navigation = () => {
-    
     return (
         <>
-            <MainNav/>
+            <MainNav />
         </>
     );
 };

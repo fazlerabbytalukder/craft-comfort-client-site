@@ -61,7 +61,7 @@ const MyOrder = () => {
                     <tbody className='divide-y divide-primary dark:divide-main'>
                         {myOrder.map((row) => (
                             <tr key={row._id} className='text-center cursor-pointer'>
-                                <td className='py-3 px-6 whitespace-nowrap'>{row.furnitureName}</td>
+                                <td className='py-3 px-6 whitespace-nowrap'>{row.productInfo.map(product => {return(<p>{product.productName} - {product.quantity}</p>)})}</td>
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.price}</td>
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.category}</td>
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.status ==="pending" ? <span className='bg-red-100 px-3 py-1 rounded-full dark:text-primary'>Pending</span>:<span className='bg-lime-100 px-3 py-1 rounded-full dark:text-primary'>Shifted</span>}</td>

@@ -10,7 +10,6 @@ import OfferBanner from '../OfferBanner/OfferBanner';
 import SuggestesProducts from '../SuggestedProduct/SuggestesProducts';
 import UpcommingProducts from '../UpcommingProduct/UpcommingProducts';
 
-
 const Home = () => {
     return (
         <div>

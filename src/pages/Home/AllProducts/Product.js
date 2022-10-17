@@ -2,16 +2,16 @@ import React from 'react';
 import { GiSelfLove } from "react-icons/gi";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
-const Product = ({ furniture }) => {
-    const { _id, productName, category, price, img, review, reviewNumber } = furniture;
+const Product = ({ furniture, handleAddToCart }) => {
+    const { productName, category, price, img, review, reviewNumber } = furniture;
     // console.log(review);
-    const history = useNavigate();
+    // const history = useNavigate();
 
-    const handleProductClick = () => {
-        history(`/furnitures/${_id}`);
-    }
+    // const handleProductClick = () => {
+    //     history(`/furnitures/${_id}`);
+    // }
     return (
         <div>
             <div className="shadow dark:bg-[#0B1120] dark:shadow-lg">
@@ -41,7 +41,8 @@ const Product = ({ furniture }) => {
                     </div>
                 </div>
                 <div>
-                    <button className="px-4 py-2 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main w-full"><span className='flex items-center justify-center cursor-pointer' onClick={handleProductClick}><BsEye className='mr-3' />Details</span></button>
+                    {/* <button className="px-4 py-2 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main w-full"><span className='flex items-center justify-center cursor-pointer'><BsEye className='mr-3'  />Add to cart</span></button> */}
+                    <button className='bg-primary text-white w-full' onClick={()=>handleAddToCart(furniture)}>Cart</button>
                 </div>
             </div>
         </div>
