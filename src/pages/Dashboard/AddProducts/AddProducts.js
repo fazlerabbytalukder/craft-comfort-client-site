@@ -9,6 +9,7 @@ const initialProduct = {
     review: null,
     img: '',
     reviewNumber: "",
+    quantity: 0
 }
 
 const AddProducts = () => {
@@ -61,8 +62,8 @@ const AddProducts = () => {
                         <div className="relative flex flex-col">
                             <label for="ProductDes" className="leading-7 text-sm text-gray-600">Description</label>
                             <textarea
-                                rows="3"
-                                cols="50"
+                                rows="5"
+                                cols="55"
                                 placeholder="Description"
                                 required
                                 value={productData.ProductDes}
@@ -105,6 +106,12 @@ const AddProducts = () => {
                                 <option>3</option>
                                 <option>4</option>
                                 <option>5</option>
+                            </select>
+                        </div>
+                        <div className="relative flex flex-col">
+                            <label for="category" className="leading-7 text-sm text-gray-600">Select Quantity</label>
+                            <select value={productData.quantity} onChange={(e) => setProductData({ ...productData, quantity: parseFloat(e.target.value) })} className="w-full bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-2 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                <option>0</option>
                             </select>
                         </div>
                         <div className="relative flex flex-col">
