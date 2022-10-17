@@ -51,7 +51,6 @@ const MyOrder = () => {
                     <thead className='bg-primary dark:bg-main text-white'>
                         <th className='py-3'>Product Name</th>
                         <th className='py-3'>Price</th>
-                        <th className='py-3'>Category</th>
                         <th className='py-3'>Status</th>
                         <th className='py-3'>Action</th>
                     </thead>
@@ -62,8 +61,7 @@ const MyOrder = () => {
                         {myOrder.map((row) => (
                             <tr key={row._id} className='text-center cursor-pointer'>
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.productInfo.map(product => {return(<p>{product.productName} - {product.quantity}</p>)})}</td>
-                                <td className='py-3 px-6 whitespace-nowrap'>{row.price}</td>
-                                <td className='py-3 px-6 whitespace-nowrap'>{row.category}</td>
+                                <td className='py-3 px-6 whitespace-nowrap'>{row.grandTotal}</td>
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.status ==="pending" ? <span className='bg-red-100 px-3 py-1 rounded-full dark:text-primary'>Pending</span>:<span className='bg-lime-100 px-3 py-1 rounded-full dark:text-primary'>Shifted</span>}</td>
                                 <td><button onClick={() => handleDelete(row._id)} className={`${row.status === "Shipped" && "opacity-50 cursor-not-allowed"}`}><BsTrash className='text-red-600' /></button></td>
                             </tr>

@@ -68,6 +68,7 @@ const ManageAll = () => {
                     <th className='py-3'>Name</th>
                     <th className='py-3'>Email</th>
                     <th className='py-3'>Furniture</th>
+                    <th className='py-3'>Price</th>
                     <th className='py-3'>Status</th>
                     <th className='py-3'>Approval</th>
                     <th className='py-3'>Action</th>
@@ -83,6 +84,7 @@ const ManageAll = () => {
                             <td className='py-3 px-6 whitespace-nowrap'>{row.yourName}</td>
                             <td className='py-3 px-6 whitespace-nowrap'>{row.email}</td>
                             <td className='py-3 px-6 whitespace-nowrap flex flex-col'>{row.productInfo.map(product => {return(<p>{product.productName} - {product.quantity}</p>)})}</td>
+                            <td className='py-3 px-6 whitespace-nowrap'>$ {row.grandTotal}</td>
                             <td className='py-3 px-6 whitespace-nowrap'>{row.status === "pending" ? <span className='bg-red-100 px-3 py-1 rounded-full dark:text-primary'>{row.status}</span> : <span className='bg-lime-100 px-3 py-1 rounded-full dark:text-primary'>{row.status}</span>}</td>
                             <td className="py-3 px-6 whitespace-nowrap"><button className={`bg-primary dark:bg-main text-white px-3 py-1 rounded ${row.status === "Shipped" && "opacity-50 cursor-not-allowed"}`} onClick={() => handleUpdate(row._id)}>{row.status === "pending" ? <span>Approve</span> : <span>Shipped</span>}</button></td>
                             <td className='py-3 px-6 whitespace-nowrap'><button onClick={() => handleDelete(row._id)}><BsTrash className='text-red-600' /></button></td>
