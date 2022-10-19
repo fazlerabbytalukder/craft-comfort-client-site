@@ -28,11 +28,11 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Home></Home>} />
             <Route path='/home' element={<Home></Home>} />
+            <Route path='/myorder' element={<PrivateRoute><MyOrder></MyOrder></PrivateRoute>}></Route>
             <Route path='/cartReview' element={<CartReviews></CartReviews>} />
             <Route path='/checkout' element={<PrivateRoute><Checkout></Checkout></PrivateRoute>} />
             <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}>
               <Route index element={<DashBoardHome></DashBoardHome>}></Route>
-              <Route path='myorder' element={<MyOrder></MyOrder>}></Route>
               <Route path='manageall' element={<AminRoute><ManageAll></ManageAll></AminRoute>}></Route>
               <Route path='makeadmin' element={<AminRoute><MakeAdmin></MakeAdmin></AminRoute>}></Route>
               <Route path='manageallproduct' element={<AminRoute><ManageAllProduct></ManageAllProduct></AminRoute>}></Route>

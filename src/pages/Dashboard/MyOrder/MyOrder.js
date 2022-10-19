@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
 import { ImSpinner10 } from "react-icons/im";
 import { BsTrash } from "react-icons/bs";
+import MainNav from '../../Shared/MainNav/MainNav';
+import Footer from '../../Shared/Footer/Footer';
 
 const MyOrder = () => {
     const { user } = useAuth();
@@ -44,10 +46,12 @@ const MyOrder = () => {
 
 
     return (
-        <div>
+        <div className='bg-[#E2E8F0] dark:bg-[#0F1523]'>
+            <MainNav/>
             {/* table part  */}
-            <div className='overflow-auto'>
-                <table className='shadow-2xl border-2 border-primary dark:border-main w-full'>
+            <div className='overflow-auto container px-5 mx-auto pb-10'>
+                <h1 className='text-center text-primary font-semibold text-3xl py-8 uppercase dark:text-white'>My Orders</h1>
+                <table className='shadow border-2 border-primary dark:border-main w-full'>
                     <thead className='bg-primary dark:bg-main text-white'>
                         <th className='py-3'>Product Name</th>
                         <th className='py-3'>Price</th>
@@ -57,7 +61,7 @@ const MyOrder = () => {
 
                     {isLoading && <div className='flex justify-center items-center'><ImSpinner10 className='animate-spin text-5xl text-center' /></div>}
 
-                    <tbody className='divide-y divide-primary dark:divide-main'>
+                    <tbody className='divide-y divide-primary dark:divide-main dark:text-white'>
                         {myOrder.map((row) => (
                             <tr key={row._id} className='text-center cursor-pointer'>
                                 <td className='py-3 px-6 whitespace-nowrap'>{row.productInfo.map(product => {return(<p>{product.productName} - {product.quantity}</p>)})}</td>
@@ -69,6 +73,7 @@ const MyOrder = () => {
                     </tbody>
                 </table>
             </div>
+            <Footer/>
         </div>
     );
 };
