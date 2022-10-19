@@ -4,6 +4,7 @@ import useAuth from '../../../Hooks/useAuth';
 import { FiMenu } from "react-icons/fi"
 import { BiSun } from "react-icons/bi";
 import { MdOutlineDarkMode } from "react-icons/md";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import useDarkMood from '../../../Hooks/useDarkMood';
 import logo from '../../../images/furniture-logo.png';
 
@@ -46,12 +47,9 @@ const MainNav = ({ items }) => {
                             }
                             <li>
                                 <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/cartReview'>
-
-                                    <div>
-                                        <button>Cart</button>
-                                    </div>
-                                    <div>
-                                        {items}
+                                    <div className='relative flex'>
+                                        <AiOutlineShoppingCart className='flex-1 w-7 h-7 fill-current' />
+                                        <span className='absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center'>{items}</span>
                                     </div>
                                 </Link>
                             </li>
