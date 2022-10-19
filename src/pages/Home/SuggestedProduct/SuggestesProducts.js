@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import Heading from '../AllComponents/Heading';
 import { ImSpinner10 } from "react-icons/im";
 import SuggestedProduct from './SuggestedProduct';
@@ -8,7 +8,7 @@ import { addToDb } from '../../../utilities/fakedb';
 import { DataProvider } from '../../../contexts/DataProvider';
 
 const SuggestesProducts = () => {
-    const [furniture, setFurniture, isLoading] = useProducts();
+    const [furniture, isLoading] = useProducts();
     const [cart, setCart] = useCart();
     const { quantity } = useContext(DataProvider);
 

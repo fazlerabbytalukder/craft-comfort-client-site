@@ -5,6 +5,7 @@ import useCart from '../../../Hooks/useCart';
 import { addToDb } from '../../../utilities/fakedb';
 import Heading from '../AllComponents/Heading';
 import Product from './Product';
+import { ImSpinner10 } from "react-icons/im";
 
 
 const Products = () => {
@@ -72,27 +73,31 @@ const Products = () => {
             <Heading title="Our Products" description="This is Our products and here you find all Products" />
             <section className="text-gray-600 body-font">
                 <div className="container px-5 mx-auto">
+                    {/* loading added if item not shown */}
+                    {
+                        isLoading && <div className='flex justify-center items-center'><ImSpinner10 className='animate-spin text-5xl' /></div>
+                    }
                     <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4">
                         {
-                            furnitures.map(furniture => <Product key={furniture._id} furniture={furniture} handleAddToCart={handleAddToCart}/>)
+                            furnitures.map(furniture => <Product key={furniture._id} furniture={furniture} handleAddToCart={handleAddToCart} />)
                         }
                     </div>
                     <div className='flex items-center justify-end'>
-                            <div className='space-x-2 mt-6'>
-                                {
-                                    [...Array(pageCount).keys()].map(number => <button
-                                        onClick={() => setPage(number)}
-                                        className={`border border-[#FD3D57] px-4 py-1 font-bold dark:text-white ${page === number ? "bg-[#FD3D57]" : ""}`}
-                                    >{number + 1}</button>)
-                                }
-                                <select className='border border-[#FD3D57] px-4 py-1 font-bold dark:text-white dark:bg-primary dark:border-[#FD3D57]' onChange={e => setSize(e.target.value)}>
-                                    <option value="8" selected>8</option>
-                                    <option value="10">10</option>
-                                    <option value="12">12</option>
-                                    <option value="14">14</option>
-                                </select>
-                            </div>
+                        <div className='space-x-2 mt-6'>
+                            {
+                                [...Array(pageCount).keys()].map(number => <button
+                                    onClick={() => setPage(number)}
+                                    className={`border border-[#FD3D57] px-4 py-1 font-bold dark:text-white ${page === number ? "bg-[#FD3D57]" : ""}`}
+                                >{number + 1}</button>)
+                            }
+                            <select className='border border-[#FD3D57] px-4 py-1 font-bold dark:text-white dark:bg-primary dark:border-[#FD3D57]' onChange={e => setSize(e.target.value)}>
+                                <option value="8" selected>8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="14">14</option>
+                            </select>
                         </div>
+                    </div>
                 </div>
             </section>
 
