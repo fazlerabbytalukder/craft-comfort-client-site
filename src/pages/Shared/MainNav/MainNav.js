@@ -7,7 +7,7 @@ import { MdOutlineDarkMode } from "react-icons/md";
 import useDarkMood from '../../../Hooks/useDarkMood';
 import logo from '../../../images/furniture-logo.png';
 
-const MainNav = () => {
+const MainNav = ({ items }) => {
     const [open, setOpen] = useState(false);
     const { user, logout, admin } = useAuth();
 
@@ -34,18 +34,26 @@ const MainNav = () => {
                             {
                                 user?.email && <>
                                     <li>
-                                <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/myorder'><button>My Orders</button></Link>
+                                        <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/myorder'><button>My Orders</button></Link>
                                     </li>
                                 </>
                             }
                             {/* admin can olny enter dashboard  */}
                             {
                                 admin && (<li>
-                                <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/dashboard'><button>Dashboard</button></Link>
-                            </li>)
+                                    <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/dashboard'><button>Dashboard</button></Link>
+                                </li>)
                             }
                             <li>
-                                <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/cartReview'><button>Cart</button></Link>
+                                <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/cartReview'>
+
+                                    <div>
+                                        <button>Cart</button>
+                                    </div>
+                                    <div>
+                                        {items}
+                                    </div>
+                                </Link>
                             </li>
                             {/* user based button show login or logout  */}
                             <li>

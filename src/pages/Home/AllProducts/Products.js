@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { getData } from '../../../api/CallApi';
+import { DataProvider } from '../../../contexts/DataProvider';
 import useCart from '../../../Hooks/useCart';
 import { addToDb } from '../../../utilities/fakedb';
 import Heading from '../AllComponents/Heading';
@@ -12,28 +14,38 @@ const Products = () => {
     const [pageCount, setPageCount] = useState(0);
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(8);
+    const { quantity } = useContext(DataProvider);
 
     useEffect(() => {
-        fetch('http://localhost:5000/furnituresCount')
-            .then(res => res.json())
-            .then(data => {
-                const count = data.count;
-                const pages = Math.ceil(count / 8);
-                setPageCount(pages)
-            });
+        getProductsCount();
     }, [])
 
+    const getProductsCount = async () => {
+        try {
+            const pres = await getData("/furnituresCount")
+            console.log(pres);
+            setPageCount(Math.ceil(pres.data.count / 8));
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
 
     useEffect(() => {
-        setIsLoading(true);
-        fetch(`http://localhost:5000/furnitures?page=${page}&size=${size}`)
-            .then(res => res.json())
-            .then(data => {
-                setFurnitures(data);
-                // setDisplayFurniture(data);
-                setIsLoading(false);
-            });
+        getProducts();
     }, [page, size])
+
+    const getProducts = async () => {
+        setIsLoading(true);
+        try {
+            const pres = await getData(`/furnitures?page=${page}&size=${size}`);
+            setFurnitures(pres.data);
+            setIsLoading(false);
+        } catch (error) {
+            console.log(error);
+            setIsLoading(false);
+        }
+    }
 
 
     const handleAddToCart = (selectedFurnitures) => {
@@ -49,6 +61,8 @@ const Products = () => {
         }
         setCart(newCart);
         addToDb(selectedFurnitures._id);
+
+        quantity();
     }
 
 

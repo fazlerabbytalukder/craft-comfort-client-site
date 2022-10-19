@@ -2,10 +2,10 @@ import React from 'react';
 import MainNav from '../MainNav/MainNav';
 
 
-const Navigation = () => {
+const Navigation = ({items}) => {
     return (
         <>
-            <MainNav />
+            <MainNav items={items} />
         </>
     );
 };

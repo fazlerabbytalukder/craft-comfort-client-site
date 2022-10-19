@@ -18,15 +18,22 @@ import ManageAllProduct from './pages/Dashboard/ManageAllProduct/ManageAllProduc
 import AddProducts from './pages/Dashboard/AddProducts/AddProducts';
 import CartReviews from './pages/Cart/CartReview/CartReviews';
 import Checkout from './pages/Cart/Checkout/Checkout';
+import { DataProvider } from './contexts/DataProvider';
+import { useState } from 'react';
 
 function App() {
+  const [hitDb, setHitDb] = useState(0);
+  const quantity = () => {
+    setHitDb(hitDb + 1);
+  }
   return (
     <div className='transition duration-500 font-poppins'>
+      <DataProvider.Provider value={{quantity}}>
       <AuthProvider>
         <BrowserRouter>
           {/* <Navigation/> */}
           <Routes>
-            <Route exact path='/' element={<Home></Home>} />
+            <Route exact path='/' element={<Home hitDb={hitDb}></Home>} />
             <Route path='/home' element={<Home></Home>} />
             <Route path='/myorder' element={<PrivateRoute><MyOrder></MyOrder></PrivateRoute>}></Route>
             <Route path='/cartReview' element={<CartReviews></CartReviews>} />
@@ -46,6 +53,7 @@ function App() {
           {/* <Footer /> */}
         </BrowserRouter>
       </AuthProvider>
+      </DataProvider.Provider>
     </div>
   );
 }

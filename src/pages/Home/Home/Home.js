@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Products from '../AllProducts/Products';
 import Banner from '../Banner/Banner';
 import ExclusiveOffer from '../ExclusiveOffer/ExclusiveOffer';
@@ -10,10 +10,19 @@ import OfferBanner from '../OfferBanner/OfferBanner';
 import SuggestesProducts from '../SuggestedProduct/SuggestesProducts';
 import UpcommingProducts from '../UpcommingProduct/UpcommingProducts';
 
-const Home = () => {
+
+const Home = ({ hitDb }) => {
+    const [items, setItems] = useState(0);
+
+    useEffect(() => {
+        const storedCart = localStorage.getItem('shopping-cart');
+        // console.log(storedCart);
+        storedCart && setItems(Object.keys(JSON.parse(storedCart)).length);
+    }, [hitDb])
+    
     return (
         <div>
-            <Navigation></Navigation>
+            <Navigation items={items}></Navigation>
             <Banner></Banner>
             <ExclusiveOffer></ExclusiveOffer>
             <Offer></Offer>
