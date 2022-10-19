@@ -26,7 +26,7 @@ const Products = () => {
     const getProductsCount = async () => {
         try {
             const pres = await getData("/furnituresCount")
-            console.log(pres);
+            // console.log(pres);
             setPageCount(Math.ceil(pres.data.count / 8));
         } catch (error) {
             console.log(error);

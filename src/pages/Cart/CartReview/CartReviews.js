@@ -30,15 +30,10 @@ const CartReviews = () => {
         }
         setQuantity(q)
         setTotal(t)
-
-        // const name = cart.map(product => product.productName);
-
         setTax(parseFloat((t * 0.1).toFixed(2)));
+        setGrandTotal(t + tax);
 
-        setGrandTotal(t + tax)
     }, [cart])
-
-    // console.log(cart);
 
     return (
         <div className='dark:bg-[#0B1120]'>

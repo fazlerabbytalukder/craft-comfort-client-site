@@ -7,21 +7,17 @@ import Navigation from '../../Shared/Navigation/Navigation';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 
 const Checkout = () => {
-    // const [order, setOrder] = useState([]);
     const { user } = useAuth();
-    const [cart, setCart] = useCart();
+    const [cart] = useCart();
     const [orderSuccess, setorderSuccess] = useState(false);
     const [total, setTotal] = useState(0);
     const [grandTotal, setGrandTotal] = useState(0);
     const [tax, setTax] = useState(0);
     const [quantity, setQuantity] = useState(0);
-    console.log('cart data', cart)
 
     const yourName = user.displayName;
     const email = user.email;
-
     const initialInfo = { yourName, email };
-
     const [orderInfo, setOrderInfo] = useState(initialInfo);
 
     useEffect(() => {
@@ -34,11 +30,7 @@ const Checkout = () => {
         }
         setQuantity(q)
         setTotal(t)
-
-        // const name = cart.map(product => product.productName);
-
         setTax(parseFloat((t * 0.1).toFixed(2)));
-
         setGrandTotal(t + tax)
     }, [cart])
 
@@ -62,7 +54,6 @@ const Checkout = () => {
             quantity: quantity,
             status: "pending",
         };
-        // console.log(productOrder);
 
         // send data to the serer
         fetch("http://localhost:5000/orders", {
@@ -119,6 +110,7 @@ const Checkout = () => {
                             </div>
                         </form>
                     </div>
+                    {/* cart section  */}
                     <div className='flex-shrink-0 lg:mt-3'>
                         <Cart cart={cart} total={total} grandTotal={grandTotal} tax={tax} quantity={quantity} />
                     </div>
