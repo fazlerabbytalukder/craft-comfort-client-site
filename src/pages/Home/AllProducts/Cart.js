@@ -22,7 +22,7 @@ const Cart = (props) => {
                     </div>
                     <div className='flex justify-between mt-2 mb-4'>
                         <p className='text-primary font-semibold dark:text-white'>Total Price:</p>
-                        <p>${grandTotal?.toFixed(2)}</p>
+                        <p>${grandTotal}</p>
                     </div>
                     {props.children}
                 </div>
