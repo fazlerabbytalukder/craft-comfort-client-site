@@ -5,7 +5,6 @@ import { BsArrowLeftShort } from "react-icons/bs";
 import { BiHome } from "react-icons/bi";
 import { RiAdminLine } from "react-icons/ri";
 import { MdOutlineManageAccounts, MdOutlineProductionQuantityLimits } from "react-icons/md";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiFillFolderAdd } from "react-icons/ai";
 import DashboardNav from '../../Shared/DashboardNav/DashboardNav';
 import useAuth from '../../../Hooks/useAuth';
@@ -32,12 +31,6 @@ const Dashboard = () => {
                             <Link to='/dashboard' className='text-white text-sm- flex items-center gap-x-4 cursor-pointer p-2 hover:text-main dark:hover:text-primary rounded-md mt-2'>
                                 <span><RiDashboardLine /></span>
                                 <span className={`text-base font-medium flex-1 duration-300 ${!open && "hidden"}`}>Dashboard</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='/dashboard/myorder' className='text-white text-sm- flex items-center gap-x-4 cursor-pointer p-2 hover:text-main dark:hover:text-primary rounded-md mt-2'>
-                                <span><AiOutlineShoppingCart /></span>
-                                <span className={`text-base font-medium flex-1 duration-300 ${!open && "hidden"}`}>My Order</span>
                             </Link>
                         </li>
                         {
