@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Heading from '../AllComponents/Heading';
 import { ImSpinner10 } from "react-icons/im";
 import SuggestedProduct from './SuggestedProduct';
 import useProducts from '../../../Hooks/useProducts';
 import useCart from '../../../Hooks/useCart';
 import { addToDb } from '../../../utilities/fakedb';
+import { DataProvider } from '../../../contexts/DataProvider';
 
 const SuggestesProducts = () => {
     const [furniture, setFurniture, isLoading] = useProducts();
     const [cart, setCart] = useCart();
+    const { quantity } = useContext(DataProvider);
 
     const handleAddToCart = (selectedFurnitures) => {
         let newCart = [];
@@ -23,6 +25,8 @@ const SuggestesProducts = () => {
         }
         setCart(newCart);
         addToDb(selectedFurnitures._id);
+
+        quantity();
     }
 
     return (
