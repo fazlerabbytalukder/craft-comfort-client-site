@@ -1,16 +1,9 @@
 import React from 'react';
 import { AiOutlineStar, AiFillStar, AiOutlineShoppingCart } from "react-icons/ai";
-import { BsEye } from "react-icons/bs";
-import { useNavigate } from 'react-router-dom';
 
 const NawArrival = ({ furniture, handleAddToCart }) => {
-    const { _id, productName, category, price, img, review, reviewNumber } = furniture;
+    const { productName, category, price, img, review, reviewNumber } = furniture;
 
-    // const history = useNavigate();
-
-    // const handleProductClick = () => {
-    //     history(`/furnitures/${_id}`);
-    // }
 
     return (
         <div>
@@ -41,7 +34,6 @@ const NawArrival = ({ furniture, handleAddToCart }) => {
                     </div>
                 </div>
                 <div>
-                    {/* <button className="px-4 py-2 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main w-full"><span className='flex items-center justify-center cursor-pointer' onClick={handleProductClick}><BsEye className='mr-3' />Details</span></button> */}
                     <button className='bg-primary text-white w-full py-2 rounded-b dark:bg-main' onClick={()=>handleAddToCart(furniture)}><span className='flex justify-center items-center'><AiOutlineShoppingCart className='mr-2'/>Add To Cart</span></button>
                 </div>
             </div>

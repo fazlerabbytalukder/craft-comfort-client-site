@@ -1,10 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { AiOutlineStar, AiFillStar, AiOutlineShoppingCart } from "react-icons/ai";
-import { BsEye } from "react-icons/bs";
 
 const SuggestedProduct = ({furniture, handleAddToCart}) => {
-    const { _id, productName, category, price, img, review, reviewNumber } = furniture;
+    const { productName, category, price, img, review, reviewNumber } = furniture;
 
     return (
         <div>

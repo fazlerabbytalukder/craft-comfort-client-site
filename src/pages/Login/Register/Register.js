@@ -17,12 +17,10 @@ const Register = () => {
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
-        // console.log(field,value);
 
         const newLoginData = { ...loginData };
         newLoginData[field] = value;
 
-        // console.log(newLoginData);
         SetLoginData(newLoginData);
     }
     const handleLoginSubmit = e => {
@@ -31,7 +29,6 @@ const Register = () => {
             return;
         }
         registerUser(loginData.email, loginData.password, loginData.name, navigate);
-        // alert('hello')
         e.preventDefault();
     }
 

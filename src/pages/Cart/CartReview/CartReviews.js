@@ -14,12 +14,14 @@ const CartReviews = () => {
     const [tax, setTax] = useState(0);
     const [quantity, setQuantity] = useState(0);
 
+    // remove product form cart 
     const handleRemoveProduct = furniture => {
         const rest = cart.filter(pd => pd._id !== furniture._id);
         setCart(rest);
         removeFromDb(furniture._id);
     }
 
+    // cart calculation 
     useEffect(() => {
         let q = 0
         let t = 0

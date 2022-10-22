@@ -7,7 +7,6 @@ const Cart = (props) => {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-5 mx-auto dark:text-white">
                     <h1 className='text-xl uppercase text-primary font-semibold mb-3 dark:text-white'>order summary</h1>
-                    {/* <p>names:{name}</p> */}
                     <div className='flex justify-between mb-1'>
                         <p className='text-primary font-semibold dark:text-white'>Total Furniture:</p>
                         <p>{quantity}</p>

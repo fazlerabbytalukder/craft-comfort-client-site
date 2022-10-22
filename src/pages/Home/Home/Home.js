@@ -16,7 +16,6 @@ const Home = ({ hitDb }) => {
 
     useEffect(() => {
         const storedCart = localStorage.getItem('shopping-cart');
-        // console.log(storedCart);
         storedCart && setItems(Object.keys(JSON.parse(storedCart)).length);
     }, [hitDb])
     
