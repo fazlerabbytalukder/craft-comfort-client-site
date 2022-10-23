@@ -56,7 +56,7 @@ const Checkout = () => {
         };
 
         // send data to the serer
-        fetch("http://localhost:5000/orders", {
+        fetch("https://craft-comfort-server.onrender.com/orders", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

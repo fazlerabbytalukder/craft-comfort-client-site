@@ -10,7 +10,7 @@ const ManageAll = () => {
     // fetch all order 
     useEffect(() => {
         setIsLoading(true);
-        fetch('http://localhost:5000/allOrders')
+        fetch('https://craft-comfort-server.onrender.com/allOrders')
             .then(res => res.json())
             .then(data => {
                 setOrderData(data)
@@ -21,7 +21,7 @@ const ManageAll = () => {
     //update data pending to approved
     const handleUpdate = (id) => {
 
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://craft-comfort-server.onrender.com/orders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -44,7 +44,7 @@ const ManageAll = () => {
         setApproveId(id);
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://craft-comfort-server.onrender.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

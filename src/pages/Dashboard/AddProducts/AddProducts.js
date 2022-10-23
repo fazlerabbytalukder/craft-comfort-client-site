@@ -21,7 +21,7 @@ const AddProducts = () => {
         if (!productData.img) {
             return;
         }
-        fetch('http://localhost:5000/furnitures', {
+        fetch('https://craft-comfort-server.onrender.com/furnitures', {
             headers: {
                 "content-type": "application/json"
             },

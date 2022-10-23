@@ -4,7 +4,7 @@ const useOrders = () => {
     const [orderData, setOrderData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allOrders')
+        fetch('https://craft-comfort-server.onrender.com/allOrders')
             .then(res => res.json())
             .then(data => {
                 setOrderData(data)

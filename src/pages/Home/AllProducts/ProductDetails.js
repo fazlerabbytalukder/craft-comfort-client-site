@@ -17,7 +17,7 @@ const ProductDetails = () => {
     const [singleProduct, setSingleProduct] = useState([]);
     const { furnitureId } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/furnitures/${furnitureId}`)
+        fetch(`https://craft-comfort-server.onrender.com/furnitures/${furnitureId}`)
             .then((res) => res.json())
             .then((data) => setSingleProduct(data));
     }, [furnitureId]);
@@ -45,7 +45,7 @@ const ProductDetails = () => {
 
 
         //send data to the server
-        fetch("http://localhost:5000/orders", {
+        fetch("https://craft-comfort-server.onrender.com/orders", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

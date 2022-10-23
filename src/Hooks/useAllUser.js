@@ -4,7 +4,7 @@ const useAllUser = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allusers`)
+        fetch(`https://craft-comfort-server.onrender.com/allusers`)
             .then(res => res.json())
             .then(data => {
                 setUsers(data);

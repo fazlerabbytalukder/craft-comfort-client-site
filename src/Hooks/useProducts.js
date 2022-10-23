@@ -6,7 +6,7 @@ const useProducts = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch(`http://localhost:5000/furnitures`)
+        fetch(`https://craft-comfort-server.onrender.com/furnitures`)
             .then(res => res.json())
             .then(data => {
                 setFurnitures(data);
