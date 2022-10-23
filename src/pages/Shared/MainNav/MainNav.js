@@ -28,9 +28,6 @@ const MainNav = ({ items }) => {
                             <li>
                                 <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/'><button>Home</button></Link>
                             </li>
-                            <li>
-                                <Link className='lg:px-5 py-2 font-semibold block lg:hover:bg-primary lg:hover:text-ternary lg:hover:rounded-md' to='/contact'><button>Contact Us</button></Link>
-                            </li>
                             {/* login user can only seen my orders  */}
                             {
                                 user?.email && <>

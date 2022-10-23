@@ -42,8 +42,6 @@ function App() {
               <Route path='manageallproduct' element={<AminRoute><ManageAllProduct></ManageAllProduct></AminRoute>}></Route>
               <Route path='addproducts' element={<AminRoute><AddProducts></AddProducts></AminRoute>}></Route>
             </Route>
-            <Route path='/furnitures/:furnitureId' element={<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>} />
-            <Route path='/services' element={<PrivateRoute><Services></Services></PrivateRoute>} />
             <Route path='/login' element={<Login></Login>} />
             <Route path='/register' element={<Register></Register>} />
           </Routes>

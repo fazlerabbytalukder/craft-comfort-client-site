@@ -4,6 +4,8 @@ import useAuth from '../../../Hooks/useAuth';
 import loginImg from '../../../images/login-sign-img.png';
 import { FcGoogle } from "react-icons/fc";
 import { ImSpinner10 } from "react-icons/im";
+import MainNav from '../../Shared/MainNav/MainNav';
+import Footer from '../../Shared/Footer/Footer';
 
 const Login = () => {
     const [loginData, SetLoginData] = useState({})
@@ -37,6 +39,7 @@ const Login = () => {
 
     return (
         <div>
+            <MainNav/>
             <section className="text-gray-600 body-font dark:bg-primary">
                 <div className="container px-5 mx-auto flex flex-wrap items-center">
                     {/* form part */}
@@ -79,6 +82,7 @@ const Login = () => {
                     </div>
                 </div>
             </section>
+            <Footer/>
         </div>
     );
 };

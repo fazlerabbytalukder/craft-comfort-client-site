@@ -4,6 +4,8 @@ import useAuth from '../../../Hooks/useAuth';
 import { FcGoogle } from "react-icons/fc";
 import { ImSpinner10 } from "react-icons/im";
 import loginImg from '../../../images/login-sign-img.png';
+import MainNav from '../../Shared/MainNav/MainNav';
+import Footer from '../../Shared/Footer/Footer';
 
 const Register = () => {
     const [loginData, SetLoginData] = useState({})
@@ -39,6 +41,7 @@ const Register = () => {
 
     return (
         <>
+            <MainNav/>
             <section className="text-gray-600 body-font dark:bg-primary">
                 <div className="container px-5 mx-auto flex flex-wrap items-center">
                     {/* form part */}
@@ -89,6 +92,7 @@ const Register = () => {
                     </div>
                 </div>
             </section>
+            <Footer/>
         </>
     );
 };
