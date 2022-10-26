@@ -16,6 +16,7 @@ import CartReviews from './pages/Cart/CartReview/CartReviews';
 import Checkout from './pages/Cart/Checkout/Checkout';
 import { DataProvider } from './contexts/DataProvider';
 import { useState } from 'react';
+import Products from './pages/Home/AllProducts/Products';
 
 function App() {
   const [hitDb, setHitDb] = useState(0);
@@ -30,6 +31,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Home hitDb={hitDb}></Home>} />
             <Route path='/home' element={<Home></Home>} />
+            <Route path='/products' element={<Products></Products>} />
             <Route path='/myorder' element={<PrivateRoute><MyOrder></MyOrder></PrivateRoute>}></Route>
             <Route path='/cartReview' element={<CartReviews></CartReviews>} />
             <Route path='/checkout' element={<PrivateRoute><Checkout></Checkout></PrivateRoute>} />

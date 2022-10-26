@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import img from '../../../images/banner-2.jpg';
 
 const OfferBanner = () => {
@@ -12,7 +13,7 @@ const OfferBanner = () => {
                                 <p className='uppercase font-semibold'>online exclussive</p>
                                 <h1 className='lg:text-5xl text-2xl font-bold uppercase text-[#FD3D57]'>15 % off</h1>
                                 <h5 className='lg:block hidden'>accent chairs, <br />benches & ottomans</h5>
-                                <button className="px-2 py-1 lg:px-4 lg:py-2 mt-2 md:mt-3 lg:mt-4 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main">SHOP NOW</button>
+                                <Link to="/products"><button className="px-2 py-1 lg:px-4 lg:py-2 mt-2 md:mt-3 lg:mt-4 font-semibold block bg-primary text-ternary rounded text-center dark:bg-main">SHOP NOW</button></Link>
                             </div>
                         </div>
                         <img className='w-full max-h-[500px] object-cover' src={img} alt="" />
