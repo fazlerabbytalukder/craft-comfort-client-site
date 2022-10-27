@@ -6,6 +6,8 @@ import { addToDb } from '../../../utilities/fakedb';
 import Heading from '../AllComponents/Heading';
 import Product from './Product';
 import { ImSpinner10 } from "react-icons/im";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Products = () => {
@@ -67,6 +69,17 @@ const Products = () => {
         addToDb(selectedFurnitures._id);
 
         quantity();
+
+        toast.success('Successfully added', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
     }
 
 
@@ -83,7 +96,7 @@ const Products = () => {
                     {/* products container  */}
                     <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4">
                         {
-                            furnitures.map(furniture => <Product key={furniture._id} furniture={furniture} handleAddToCart={handleAddToCart} />)
+                            furnitures.map(furniture => <Product key={furniture._id} furniture={furniture} handleAddToCart={handleAddToCart} ToastContainer={ToastContainer} />)
                         }
                     </div>
                     {/* pagination section  */}

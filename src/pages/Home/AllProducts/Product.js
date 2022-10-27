@@ -1,8 +1,9 @@
 import React from 'react';
 import { GiSelfLove } from "react-icons/gi";
-import { AiFillStar, AiOutlineStar,AiOutlineShoppingCart } from "react-icons/ai";
+import { AiFillStar, AiOutlineStar, AiOutlineShoppingCart } from "react-icons/ai";
 
-const Product = ({ furniture, handleAddToCart }) => {
+
+const Product = ({ furniture, handleAddToCart, ToastContainer }) => {
     const { productName, category, price, img, review, reviewNumber } = furniture;
 
     return (
@@ -37,6 +38,7 @@ const Product = ({ furniture, handleAddToCart }) => {
                     <button className='bg-primary text-white w-full py-2 rounded-b dark:bg-main' onClick={()=>handleAddToCart(furniture)}> <span className='flex justify-center items-center'><AiOutlineShoppingCart className='mr-2'/>Add To Cart</span> </button>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
