@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const initialProduct = {
     productName: "",
@@ -31,7 +33,16 @@ const AddProducts = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    setAddProductSuccess(true);
+                    toast.success('Successfully Added Product', {
+                        position: "bottom-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        });
                     setProductData(initialProduct);
                 }
             })
@@ -141,16 +152,9 @@ const AddProducts = () => {
                     </div>
                 </div>
 
-
-
-                {/* success section  */}
-                {addProductSuccess && (<div className='bg-green-700/60 py-3 rounded text-white flex items-center px-4 mb-4'>
-                    <p className='mr-3'><BsFillCheckCircleFill /></p>
-                    <p>Successfully product added</p>
-                </div>)}
-
                 <button type='submit' className='w-full px-4 py-2 font-semibold block bg-primary text-ternary text-center dark:bg-main rounded'>ADD PRODUCT</button>
             </form>
+            <ToastContainer />
         </div>
     );
 };

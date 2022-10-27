@@ -4,7 +4,8 @@ import useCart from '../../../Hooks/useCart';
 import Cart from '../../Home/AllProducts/Cart';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
-import { BsFillCheckCircleFill } from 'react-icons/bs';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const initialFormData = {
     streetAddress: "",
@@ -16,7 +17,6 @@ const initialFormData = {
 const Checkout = () => {
     const { user } = useAuth();
     const [cart] = useCart();
-    const [orderSuccess, setorderSuccess] = useState(false);
     const [total, setTotal] = useState(0);
     const [grandTotal, setGrandTotal] = useState(0);
     const [tax, setTax] = useState(0);
@@ -67,8 +67,17 @@ const Checkout = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.insertedId) {
-                    setorderSuccess(true);
                     setFormData(initialFormData);
+                    toast.success('Order Successfull', {
+                        position: "bottom-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        });
                 }
             });
     };
@@ -145,14 +154,6 @@ const Checkout = () => {
                                     value={formData.phone}
                                     onChange={e => setFormData({ ...formData, phone: e.target.value })} />
                             </div>
-                            {
-                                orderSuccess && (
-                                    <div className='bg-green-700/60 py-3 rounded text-white flex items-center px-4 mb-4'>
-                                        <p className='mr-3'><BsFillCheckCircleFill /></p>
-                                        <p>Success order</p>
-                                    </div>
-                                )
-                            }
                             <div className="relative mb-4">
                                 <button className='px-5 py-2 font-semibold bg-primary text-ternary rounded-md dark:bg-main' type="submit">Order Now</button>
                             </div>
@@ -165,6 +166,7 @@ const Checkout = () => {
                 </div>
             </section>
             <Footer />
+            <ToastContainer />
         </div>
     );
 };

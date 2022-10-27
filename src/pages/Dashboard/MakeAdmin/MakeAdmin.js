@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { ImSpinner10 } from "react-icons/im";
 import { BsTrash } from "react-icons/bs";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
-    const [success, setSuccess] = useState(false);
     const [userData, setUserData] = useState([])
     const [isLoading, setIsLoading] = useState(false);
     const [approveId, setApproveId] = useState('');
@@ -42,10 +42,17 @@ const MakeAdmin = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    alert('Admin successfully made');
-                    setSuccess(true);
+                    toast.success('Succesfully Make Admin', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        });
                 }
-                // console.log(data);
             });
         e.preventDefault();
     }
@@ -79,12 +86,6 @@ const MakeAdmin = () => {
                 <input type="email" placeholder='Enter Email' onBlur={handleOnBlur} className=" bg-formBg dark:bg-darkFormBg rounded border border-gray-300 dark:border-navDark focus:border-indigo-500 focus:ring-2 text-base outline-none text-gray-700 dark:text-ternary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                 <button type='submit' className='px-4 py-2 font-semibold block bg-primary text-ternary text-center dark:bg-main'>Make Admin</button>
             </form>
-            {/* success section  */}
-            {success && (<div className='bg-green-700/60 py-3 rounded text-white flex items-center px-4 mb-4'>
-                <p className='mr-3'><BsFillCheckCircleFill /></p>
-                <p>Made Admin Successfully</p>
-            </div>)}
-
 
             {/* table part  */}
             <div className='overflow-auto'>
@@ -110,6 +111,7 @@ const MakeAdmin = () => {
                     </tbody>
                 </table>
             </div>
+            <ToastContainer />
         </div>
     );
 };
