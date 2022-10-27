@@ -5,6 +5,8 @@ import useProducts from '../../../Hooks/useProducts';
 import useCart from '../../../Hooks/useCart';
 import { addToDb } from '../../../utilities/fakedb';
 import { DataProvider } from '../../../contexts/DataProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SuggestesProducts = () => {
     const [furniture] = useProducts();
@@ -26,6 +28,17 @@ const SuggestesProducts = () => {
         addToDb(selectedFurnitures._id);
 
         quantity();
+
+        toast.success('Successfully added', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
     }
 
     return (
@@ -38,7 +51,7 @@ const SuggestesProducts = () => {
                 <div className="container px-5 mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4">
                         {
-                            furniture.slice(furniture.sort(() => Math.random() - 0.5), 4).map(furniture => <SuggestedProduct key={furniture._id} furniture={furniture} handleAddToCart={handleAddToCart} />)
+                            furniture.slice(furniture.sort(() => Math.random() - 0.5), 4).map(furniture => <SuggestedProduct key={furniture._id} furniture={furniture} handleAddToCart={handleAddToCart} ToastContainer={ToastContainer} />)
                         }
                     </div>
                 </div>

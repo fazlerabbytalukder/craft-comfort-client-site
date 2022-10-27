@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlineStar, AiFillStar, AiOutlineShoppingCart } from "react-icons/ai";
 
-const SuggestedProduct = ({furniture, handleAddToCart}) => {
+const SuggestedProduct = ({furniture, handleAddToCart, ToastContainer}) => {
     const { productName, category, price, img, review, reviewNumber } = furniture;
 
     return (
@@ -36,6 +36,7 @@ const SuggestedProduct = ({furniture, handleAddToCart}) => {
                     <button className='bg-primary text-white w-full py-2 rounded-b dark:bg-main' onClick={()=>handleAddToCart(furniture)}><span className='flex justify-center items-center'><AiOutlineShoppingCart className='mr-2'/>Add To Cart</span></button>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
