@@ -1,40 +1,147 @@
-[debug] [2023-09-02T13:52:51.318Z] ----------------------------------------------------------------------
-[debug] [2023-09-02T13:52:51.320Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
-[debug] [2023-09-02T13:52:51.321Z] CLI Version:   11.15.0
-[debug] [2023-09-02T13:52:51.321Z] Platform:      win32
-[debug] [2023-09-02T13:52:51.321Z] Node Version:  v16.15.1
-[debug] [2023-09-02T13:52:51.352Z] Time:          Sat Sep 02 2023 19:52:51 GMT+0600 (Bangladesh Standard Time)
-[debug] [2023-09-02T13:52:51.352Z] ----------------------------------------------------------------------
+[debug] [2023-09-02T14:03:38.685Z] ----------------------------------------------------------------------
+[debug] [2023-09-02T14:03:38.689Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-09-02T14:03:38.690Z] CLI Version:   12.5.2
+[debug] [2023-09-02T14:03:38.691Z] Platform:      win32
+[debug] [2023-09-02T14:03:38.691Z] Node Version:  v16.15.1
+[debug] [2023-09-02T14:03:38.692Z] Time:          Sat Sep 02 2023 20:03:38 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-09-02T14:03:38.693Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-09-02T13:52:51.360Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
-[debug] [2023-09-02T13:52:51.511Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-09-02T13:52:51.512Z] > authorizing via signed-in user (rjratulkhan@gmail.com)
-[debug] [2023-09-02T13:52:51.512Z] [iam] checking project craft-comfort for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2023-09-02T13:52:51.514Z] > refreshing access token with scopes: []
-[debug] [2023-09-02T13:52:51.515Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
-[debug] [2023-09-02T13:52:51.515Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2023-09-02T13:52:51.869Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
-[debug] [2023-09-02T13:52:51.869Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2023-09-02T13:52:51.869Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions [none]
-[debug] [2023-09-02T13:52:51.869Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions x-goog-quota-user=projects/craft-comfort
-[debug] [2023-09-02T13:52:51.870Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-09-02T13:52:52.247Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
-[debug] [2023-09-02T13:52:52.248Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
-[debug] [2023-09-02T13:52:53.544Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions 401
-[debug] [2023-09-02T13:52:53.545Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"service":"cloudresourcemanager.googleapis.com","method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions"}}]}}
-[debug] [2023-09-02T13:52:53.551Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
-[debug] [2023-09-02T13:52:53.552Z] > refreshing access token with scopes: []
-[debug] [2023-09-02T13:52:53.554Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
-[debug] [2023-09-02T13:52:53.554Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2023-09-02T13:52:53.882Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
-[debug] [2023-09-02T13:52:53.882Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2023-09-02T13:52:53.884Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort [none]
-[debug] [2023-09-02T13:52:54.508Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort 401
-[debug] [2023-09-02T13:52:54.508Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
-[debug] [2023-09-02T13:52:54.508Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
-[debug] [2023-09-02T13:52:54.811Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-09-02T14:03:38.786Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-02T14:03:38.787Z] > authorizing via signed-in user (rjratulkhan@gmail.com)
+[debug] [2023-09-02T14:03:38.787Z] [iam] checking project craft-comfort for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-09-02T14:03:38.790Z] > refreshing access token with scopes: []
+[debug] [2023-09-02T14:03:38.795Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-09-02T14:03:38.796Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T14:03:39.208Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-09-02T14:03:39.209Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T14:03:39.209Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions [none]
+[debug] [2023-09-02T14:03:39.209Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions x-goog-quota-user=projects/craft-comfort
+[debug] [2023-09-02T14:03:39.209Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-09-02T14:03:41.219Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions 401
+[debug] [2023-09-02T14:03:41.219Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"service":"cloudresourcemanager.googleapis.com","method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions"}}]}}
+[debug] [2023-09-02T14:03:41.220Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-09-02T14:03:41.220Z] > refreshing access token with scopes: []
+[debug] [2023-09-02T14:03:41.220Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-09-02T14:03:41.221Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T14:03:41.540Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-09-02T14:03:41.540Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T14:03:41.541Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort [none]
+[debug] [2023-09-02T14:03:42.152Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort 401
+[debug] [2023-09-02T14:03:42.152Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2023-09-02T14:03:42.153Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-09-02T14:03:42.457Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
     at responseToError (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
-    at RetryOperation._fn (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at RetryOperation._fn (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:285:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project craft-comfort. Please make sure the project exists and your account has permission to access it.
+[debug] [2023-09-02T14:11:33.522Z] ----------------------------------------------------------------------
+[debug] [2023-09-02T14:11:33.524Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-09-02T14:11:33.525Z] CLI Version:   12.5.2
+[debug] [2023-09-02T14:11:33.525Z] Platform:      win32
+[debug] [2023-09-02T14:11:33.525Z] Node Version:  v16.15.1
+[debug] [2023-09-02T14:11:33.531Z] Time:          Sat Sep 02 2023 20:11:33 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-09-02T14:11:33.531Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-02T14:11:33.872Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-02T14:11:33.873Z] > authorizing via signed-in user (rjratulkhan@gmail.com)
+[debug] [2023-09-02T14:11:33.873Z] [iam] checking project craft-comfort for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-09-02T14:11:33.875Z] > refreshing access token with scopes: []
+[debug] [2023-09-02T14:11:33.877Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-09-02T14:11:33.877Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T14:11:34.344Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-09-02T14:11:34.345Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T14:11:34.346Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions [none]
+[debug] [2023-09-02T14:11:34.346Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions x-goog-quota-user=projects/craft-comfort
+[debug] [2023-09-02T14:11:34.347Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-09-02T14:11:36.191Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions 401
+[debug] [2023-09-02T14:11:36.191Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"service":"cloudresourcemanager.googleapis.com","method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions"}}]}}
+[debug] [2023-09-02T14:11:36.192Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-09-02T14:11:36.193Z] > refreshing access token with scopes: []
+[debug] [2023-09-02T14:11:36.193Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-09-02T14:11:36.193Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T14:11:36.571Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-09-02T14:11:36.572Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T14:11:36.572Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort [none]
+[debug] [2023-09-02T14:11:37.264Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort 401
+[debug] [2023-09-02T14:11:37.265Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2023-09-02T14:11:37.265Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-09-02T14:11:37.993Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:285:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project craft-comfort. Please make sure the project exists and your account has permission to access it.
+[debug] [2023-09-02T14:14:29.365Z] ----------------------------------------------------------------------
+[debug] [2023-09-02T14:14:29.369Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:list
+[debug] [2023-09-02T14:14:29.370Z] CLI Version:   12.5.2
+[debug] [2023-09-02T14:14:29.370Z] Platform:      win32
+[debug] [2023-09-02T14:14:29.371Z] Node Version:  v16.15.1
+[debug] [2023-09-02T14:14:29.372Z] Time:          Sat Sep 02 2023 20:14:29 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-09-02T14:14:29.373Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-02T14:14:29.485Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-02T14:14:29.486Z] > authorizing via signed-in user (rjratulkhan@gmail.com)
+[debug] [2023-09-02T14:14:29.493Z] > refreshing access token with scopes: []
+[debug] [2023-09-02T14:14:29.497Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-09-02T14:14:29.497Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T14:14:30.072Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-09-02T14:14:30.072Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T14:14:30.073Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2023-09-02T14:14:30.442Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 401
+[debug] [2023-09-02T14:14:30.442Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2023-09-02T14:14:30.444Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-09-02T14:14:31.099Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:285:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.
+[debug] [2023-09-02T14:48:11.971Z] ----------------------------------------------------------------------
+[debug] [2023-09-02T14:48:11.976Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2023-09-02T14:48:11.978Z] CLI Version:   12.5.2
+[debug] [2023-09-02T14:48:11.978Z] Platform:      win32
+[debug] [2023-09-02T14:48:11.979Z] Node Version:  v16.15.1
+[debug] [2023-09-02T14:48:11.984Z] Time:          Sat Sep 02 2023 20:48:11 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-09-02T14:48:11.985Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-02T14:48:12.462Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-02T14:48:12.463Z] > authorizing via signed-in user (rjratulkhan@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  G:\programming hero course\assignment projects\Carft Comfort\craft-comfort-client
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-09-02T14:48:33.131Z] Using project from CLI flag: craft-comfort
+[debug] [2023-09-02T14:48:33.133Z] > refreshing access token with scopes: []
+[debug] [2023-09-02T14:48:33.139Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-09-02T14:48:33.139Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T14:48:35.888Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-09-02T14:48:35.888Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T14:48:35.889Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort [none]
+[debug] [2023-09-02T14:48:36.482Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort 401
+[debug] [2023-09-02T14:48:36.482Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2023-09-02T14:48:36.483Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-09-02T14:48:36.780Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:285:77)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
 [error] 
 [error] Error: Failed to get Firebase project craft-comfort. Please make sure the project exists and your account has permission to access it.
