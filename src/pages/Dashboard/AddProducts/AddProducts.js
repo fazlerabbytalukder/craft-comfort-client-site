@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -16,14 +15,13 @@ const initialProduct = {
 
 const AddProducts = () => {
     const [productData, setProductData] = useState(initialProduct);
-    const [addProductSuccess, setAddProductSuccess] = useState(false);
 
     const handleSubmit = e => {
         e.preventDefault();
         if (!productData.img) {
             return;
         }
-        fetch('https://craft-comfort-server.onrender.com/furnitures', {
+        fetch('https://craft-comfort-server-site.onrender.com/furnitures', {
             headers: {
                 "content-type": "application/json"
             },

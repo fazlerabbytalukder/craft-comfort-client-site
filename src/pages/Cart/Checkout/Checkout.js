@@ -57,7 +57,7 @@ const Checkout = () => {
         };
 
         // send data to the serer
-        fetch("https://craft-comfort-server.onrender.com/orders", {
+        fetch("https://craft-comfort-server-site.onrender.com/orders", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

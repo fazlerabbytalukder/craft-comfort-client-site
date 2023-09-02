@@ -1,0 +1,40 @@
+[debug] [2023-09-02T13:52:51.318Z] ----------------------------------------------------------------------
+[debug] [2023-09-02T13:52:51.320Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-09-02T13:52:51.321Z] CLI Version:   11.15.0
+[debug] [2023-09-02T13:52:51.321Z] Platform:      win32
+[debug] [2023-09-02T13:52:51.321Z] Node Version:  v16.15.1
+[debug] [2023-09-02T13:52:51.352Z] Time:          Sat Sep 02 2023 19:52:51 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-09-02T13:52:51.352Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-02T13:52:51.360Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-09-02T13:52:51.511Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-02T13:52:51.512Z] > authorizing via signed-in user (rjratulkhan@gmail.com)
+[debug] [2023-09-02T13:52:51.512Z] [iam] checking project craft-comfort for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-09-02T13:52:51.514Z] > refreshing access token with scopes: []
+[debug] [2023-09-02T13:52:51.515Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-09-02T13:52:51.515Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T13:52:51.869Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-09-02T13:52:51.869Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T13:52:51.869Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions [none]
+[debug] [2023-09-02T13:52:51.869Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions x-goog-quota-user=projects/craft-comfort
+[debug] [2023-09-02T13:52:51.870Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-09-02T13:52:52.247Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-09-02T13:52:52.248Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-09-02T13:52:53.544Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions 401
+[debug] [2023-09-02T13:52:53.545Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/craft-comfort:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"service":"cloudresourcemanager.googleapis.com","method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions"}}]}}
+[debug] [2023-09-02T13:52:53.551Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-09-02T13:52:53.552Z] > refreshing access token with scopes: []
+[debug] [2023-09-02T13:52:53.554Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-09-02T13:52:53.554Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T13:52:53.882Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-09-02T13:52:53.882Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-09-02T13:52:53.884Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort [none]
+[debug] [2023-09-02T13:52:54.508Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort 401
+[debug] [2023-09-02T13:52:54.508Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/craft-comfort {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2023-09-02T13:52:54.508Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-09-02T13:52:54.811Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project craft-comfort. Please make sure the project exists and your account has permission to access it.

@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     //fetch all user data
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://craft-comfort-server.onrender.com/allusers')
+        fetch('https://craft-comfort-server-site.onrender.com/allusers')
             .then(res => res.json())
             .then(data => {
                 setUserData(data)
@@ -32,7 +32,7 @@ const MakeAdmin = () => {
     //handle admin submit
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('https://craft-comfort-server.onrender.com/users/admin', {
+        fetch('https://craft-comfort-server-site.onrender.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -63,7 +63,7 @@ const MakeAdmin = () => {
         setApproveId(id);
         const proceed = window.confirm('Are you sure, you want to delete User?');
         if (proceed) {
-            const url = `https://craft-comfort-server.onrender.com/allusers/${id}`;
+            const url = `https://craft-comfort-server-site.onrender.com/allusers/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

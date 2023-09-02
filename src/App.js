@@ -15,7 +15,7 @@ import AddProducts from './pages/Dashboard/AddProducts/AddProducts';
 import CartReviews from './pages/Cart/CartReview/CartReviews';
 import Checkout from './pages/Cart/Checkout/Checkout';
 import { DataProvider } from './contexts/DataProvider';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Products from './pages/Home/AllProducts/Products';
 
 function App() {
@@ -23,6 +23,20 @@ function App() {
   const quantity = () => {
     setHitDb(hitDb + 1);
   }
+  
+  useEffect(() => {
+    const isFirstVisit = !localStorage.getItem('visitedBefore');
+    if (isFirstVisit) {
+      localStorage.setItem('visitedBefore', 'true');
+      setTimeout(() => {
+        window.location.reload();
+      }, 10);
+    }
+  }, []);
+
+
+
+
   return (
     <div className='transition duration-500 font-poppins'>
       <DataProvider.Provider value={{quantity}}>

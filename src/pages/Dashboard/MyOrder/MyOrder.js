@@ -13,7 +13,7 @@ const MyOrder = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        const url = `https://craft-comfort-server.onrender.com/orders?email=${user.email}`;
+        const url = `https://craft-comfort-server-site.onrender.com/orders?email=${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -28,7 +28,7 @@ const MyOrder = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `https://craft-comfort-server.onrender.com/orders/${id}`;
+            const url = `https://craft-comfort-server-site.onrender.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -9,7 +9,7 @@ const useCart = () => {
         const savedCart = [];
         const keys = Object.keys(storedCart);
         // console.log(keys);
-        fetch('https://craft-comfort-server.onrender.com/furnitureByKeys', {
+        fetch('https://craft-comfort-server-site.onrender.com/furnitureByKeys', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

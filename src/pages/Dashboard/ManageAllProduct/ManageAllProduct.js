@@ -8,7 +8,7 @@ const ManageAllProduct = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://craft-comfort-server.onrender.com/furnitures')
+        fetch('https://craft-comfort-server-site.onrender.com/furnitures')
             .then(res => res.json())
             .then(data => {
                 setFurniture(data)
@@ -20,7 +20,7 @@ const ManageAllProduct = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `https://craft-comfort-server.onrender.com/furnitures/${id}`;
+            const url = `https://craft-comfort-server-site.onrender.com/furnitures/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
