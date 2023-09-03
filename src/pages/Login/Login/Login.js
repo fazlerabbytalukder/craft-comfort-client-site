@@ -48,13 +48,17 @@ const Login = () => {
                         <p className='mx-auto mb-8'>Do not share your login information</p>
                         <form onSubmit={handleLoginSubmit}>
                             {/* google sign in form part */}
+                            <div className='hidden'>
                             <div className="relative mb-4 flex items-center">
                                 <p className='mr-3 font-bold dark:text-ternary'>Sign in with</p>
                                 <button onClick={handleGoogleSignIn} className='p-2 font-semibold block bg-primary text-ternary rounded-full text-center dark:bg-main'><FcGoogle className='text-2xl' /></button>
                             </div>
+                            </div>
+                            <div className='hidden'>
                             <div className="relative mb-4">
                                 <div><hr className='text-primary' /></div>
                                 <p className='text-center text-lg dark:text-ternary'>or</p>
+                            </div>
                             </div>
 
                             {/* email pass login form part */}
